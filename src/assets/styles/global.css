@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Raleway", sans-serif;
+  src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+:root {
+  --color-text: #141414;
+  --color-background: #ffffff;
+  --color-background-1: #f2f2f2;
+  --color-text-1: #333333;
+  --base-font-size: clamp(12px, 1.1vw, 32px);
+  --h4-font-size: calc(var(--base-font-size) * 1);
+  --h3-font-size: calc(var(--base-font-size) * 1.2);
+  --h2-font-size: calc(var(--base-font-size) * 1.618);
+  --h1-font-size: calc(var(--h2-font-size) * 3.618);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-text);
+  font-family: "Montserrat";
+  transition: all 0.3s ease;
+}
+
+.row, html body #root main #hero-section .hero-image .founders .photos, html body #root main #hero-section .heading span, html body #root header nav .left, html body #root header nav, .btn-txt-ic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.column, html body #root main #hero-section .hero-image .founders, html body #root main #hero-section .heading, html body #root main section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-size: var(--h1-font-size);
+  line-height: calc(var(--h1-font-size) / 1.8);
+}
+
+h2 {
+  text-transform: capitalize;
+  font-size: var(--h2-font-size);
+  line-height: calc(var(--h2-font-size) * 1.4);
+}
+
+h3,
+.social-tags {
+  text-transform: capitalize;
+  font-size: var(--h3-font-size);
+  line-height: calc(var(--h3-font-size) * 1.4);
+}
+
+h4,
+button,
+.btn-txt-ic span,
+.btn-txt-ic p {
+  text-transform: capitalize;
+  font-size: var(--h4-font-size);
+  line-height: calc(var(--h4-font-size) * 1.4);
+}
+
+p,
+a {
+  font-size: var(--base-font-size);
+}
+
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+a::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 0%;
+  left: 50%;
+  bottom: -2px;
+  background: var(--color-text-1);
+  transition: all 0.3s ease;
+}
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+button, .btn-txt-ic span, .btn-txt-ic p,
+.button {
+  border: none;
+  background-color: var(--color-text);
+  color: var(--color-background);
+  border-radius: 24px;
+  padding: 6px 16px;
+  text-transform: capitalize;
+}
+
+.btn-ic {
+  border-radius: 50%;
+  font-size: var(--h2-font-size);
+}
+
+.btn-txt-ic {
+  background: none;
+  gap: -1px;
+}
+.social-tags {
+  background-color: var(--color-text-1);
+  color: var(--color-background);
+  border-radius: 24px;
+  text-transform: uppercase;
+}
+
+html {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html body #root {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+html body #root::-webkit-scrollbar {
+  width: 8px;
+}
+html body #root::-webkit-scrollbar-track {
+  background: transparent;
+}
+html body #root::-webkit-scrollbar-thumb {
+  background: var(--color-text-1);
+  border-radius: 8px;
+}
+html body #root header {
+  width: 100%;
+  height: 7vh;
+  position: sticky;
+  top: 0;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+}
+html body #root header nav {
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  justify-content: space-between;
+}
+html body #root header nav .logo {
+  height: 6rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+html body #root header nav .logo img {
+  height: inherit;
+  aspect-ratio: 16/9;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+html body #root header nav .logo::after,
+html body #root header nav .right a::after {
+  display: none;
+}
+html body #root main {
+  width: 100%;
+}
+html body #root main .home-button {
+  margin-left: 32px;
+}
+html body #root main section {
+  width: 100%;
+  padding: 64px;
+  align-items: center;
+  gap: 5rem;
+}
+html body #root main #hero-section .heading {
+  width: 100%;
+  align-items: center;
+}
+html body #root main #hero-section .heading span {
+  justify-content: center;
+}
+html body #root main #hero-section .heading span img {
+  height: calc(var(--h1-font-size) / 1.5);
+  aspect-ratio: 30/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 2rem;
+}
+html body #root main #hero-section .hero-image {
+  width: 100%;
+  aspect-ratio: 21/9;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+html body #root main #hero-section .hero-image button, html body #root main #hero-section .hero-image .btn-txt-ic p, .btn-txt-ic html body #root main #hero-section .hero-image p, html body #root main #hero-section .hero-image .btn-txt-ic span, .btn-txt-ic html body #root main #hero-section .hero-image span {
+  position: absolute;
+  padding: 1rem 3rem;
+  top: -1.25rem;
+  box-shadow: 0px 0px 0px 0.75rem var(--color-background);
+  z-index: 2;
+}
+html body #root main #hero-section .hero-image .image {
+  width: 100%;
+  aspect-ratio: inherit;
+  border-radius: 3rem;
+  overflow: hidden;
+  z-index: 1;
+}
+html body #root main #hero-section .hero-image .image img {
+  width: 100%;
+  aspect-ratio: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition-duration: 1s;
+}
+html body #root main #hero-section .hero-image .image:hover img {
+  transform: scale(1.1);
+}
+html body #root main #hero-section .hero-image .founders {
+  position: absolute;
+  bottom: -6rem;
+  right: 0.5rem;
+  z-index: 2;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+html body #root main #hero-section .hero-image .founders .photos {
+  gap: 1rem;
+}
+html body #root main #hero-section .hero-image .founders .photos img {
+  height: 4.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5rem var(--color-background);
+}
+html body #root main #hero-section .hero-image .founders h3 {
+  text-align: right;
+}
