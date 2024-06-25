@@ -1,11 +1,14 @@
 import React from "react";
 import { RegularButton } from "./Elements";
+
+// Import images
 import bedroom from "../assets/images/bedroom.jpg";
 import bar from "../assets/images/bar.jpg";
 import livingRoom from "../assets/images/living room.jpg";
-import user from "../assets/images/user.jpg"
-import user2 from "../assets/images/user2.jpg"
+import user from "../assets/images/user.jpg";
+import user2 from "../assets/images/user2.jpg";
 
+// Hero section component
 const HeroSection = () => {
   return (
     <section id="hero-section">
@@ -20,11 +23,10 @@ const HeroSection = () => {
       </div>
 
       <div className="hero-image">
-              <RegularButton text="best of the year" />
-
+        <RegularButton text="best of the year" />
         <div className="image">
-          <img src={livingRoom} alt="" />
-              </div>
+          <img src={livingRoom} alt="Living room" />
+        </div>
 
         <div className="founders">
           <div className="photos">
@@ -32,7 +34,9 @@ const HeroSection = () => {
             <img src={user2} alt="principal Brittocharette" />
           </div>
           <h3>
-            Founder and Principal<br></br>Brittocharette
+            Founder and Principal
+            <br />
+            Brittocharette
           </h3>
         </div>
       </div>
@@ -40,6 +44,7 @@ const HeroSection = () => {
   );
 };
 
+// Home component
 const Home = () => {
   return (
     <>
