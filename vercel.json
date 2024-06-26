@@ -1,0 +1,17 @@
+{
+  "rewrites": [],
+  "routes": [],
+  "build": {
+    "env": {},
+    "commands": [],
+    "brotli": { "source": ".html" },
+    "optimizeFonts": true,
+    "experimental": {
+      "modern": true,
+      "configFile": ".vercel/config.json"
+    },
+    "mimeTypes": {
+      "text/ttf": [".ttf"]
+    }
+  }
+}
