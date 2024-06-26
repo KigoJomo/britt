@@ -70,6 +70,7 @@ button {
 p,
 a {
   font-size: var(--base-font-size);
+  font-weight: 500;
 }
 
 a {
@@ -103,11 +104,11 @@ button,
   background-color: var(--color-text);
   color: var(--color-background);
   border-radius: 24px;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   text-transform: capitalize;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: var(--color-text-1);
   }
 }
@@ -118,23 +119,28 @@ button,
 }
 
 .btn-txt-ic {
+  height: 3rem;
+  @extend .row;
+  gap: 0;
+  padding: 0;
+
   background: none;
-  &:hover{
+  &:hover {
     background: none;
-    p,span{
+    p,
+    span {
       background: var(--color-text-1);
     }
   }
-  @extend .row;
-  gap: 0;
-  p {
-    @extend button;
-  }
+
+  p,
   span {
     height: 100%;
     display: flex;
     align-items: center;
     @extend button;
+  }
+  span {
     font-size: var(--h3-font-size);
     line-height: calc(var(--h3-font-size) / 1.4);
   }
@@ -247,13 +253,13 @@ html {
         }
         section {
           width: 100%;
-          padding: 64px;
-          @extend .column;
-          align-items: center;
-          gap: 5rem;
+          padding: 3rem;
         }
 
         #hero-section {
+          @extend .column;
+          align-items: center;
+          gap: 5rem;
           .heading {
             width: 100%;
             @extend .column;
@@ -329,13 +335,13 @@ html {
 
           .image,
           .stats,
-          .license-info{
+          .license-info {
             height: 100%;
           }
 
           .image {
             max-width: 300px;
-            img{
+            img {
               height: 100%;
             }
           }
@@ -359,23 +365,49 @@ html {
               @extend .column;
               justify-content: flex-end;
               gap: 0.5rem;
-              *{
+              * {
                 border: none;
               }
             }
           }
 
-          .license-info{
+          .license-info {
             width: 100%;
-            max-width: 20vw;
+            max-width: 25vw;
             @extend .column;
             align-items: flex-end;
             justify-content: flex-end;
             gap: 1rem;
 
-            p{
+            p {
               text-align: right;
             }
+          }
+        }
+
+        #showroom {
+          padding: 3rem 7rem;
+          @extend .row;
+          align-items: center;
+          justify-content: center;
+          gap: 2%;
+
+          .left {
+            width: 40%;
+            @extend .column;
+          }
+
+          .image {
+            width: 60%;
+            aspect-ratio: 4/3;
+            clip-path: polygon(
+              0 0,
+              80% 0,
+              80% 20%,
+              100% 20%,
+              100% 100%,
+              0% 100%
+            );
           }
         }
       }

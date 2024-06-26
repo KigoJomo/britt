@@ -4,6 +4,7 @@ import { RegularButton, StatsCard, IconTextButton } from "./Elements";
 // Import images
 import bedroom from "../assets/images/bedroom.jpg";
 import bar from "../assets/images/bar.jpg";
+import study from "../assets/images/study.jpg";
 import livingRoom from "../assets/images/living room.jpg";
 import wardrobe from "../assets/images/wardrobe.jpg";
 import user from "../assets/images/user.jpg";
@@ -46,7 +47,6 @@ const HeroSection = () => {
 };
 
 // Stats section component
-
 const Stats = () => {
   return (
     <section id="stats-section">
@@ -69,12 +69,35 @@ const Stats = () => {
   );
 }
 
+// Showroom section component
+const Showroom = () => {
+  return (
+    <section id="showroom">
+      <div className="left">
+        <h2>
+          visit our <br />
+          showroom{" "}
+        </h2>
+        <p>
+          From our studio in Miami's world-renowned Wynwood neighborhood, founders Joy Britto and David Charette create custom furniture.
+        </p>
+        <IconTextButton text="about us" />
+      </div>
+
+      <div className="image">
+          <img src={study} alt="study/office"/>
+      </div>
+    </section>
+  );
+}
+
 // Home component
 const Home = () => {
   return (
     <>
       <HeroSection />
       <Stats />
+      <Showroom />
     </>
   );
 };
