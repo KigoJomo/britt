@@ -21,7 +21,7 @@ const IconTextButton = (props) => {
     <>
       <button className="btn-txt-ic">
         <p>{props.text}</p>
-        <span>&rightarrow;</span>
+        <span>&#x2192;</span>
       </button>
     </>
   );
@@ -30,4 +30,13 @@ const IconTextButton = (props) => {
 // &#x2192;
 // &rightarrow;
 
-export { RegularButton, IconButton, IconTextButton };
+const StatsCard = (props) => {
+  return (
+    <div className="stats-card">
+      <h2>{props.title}</h2>
+      <h3>{props.value}</h3>
+    </div>
+  )
+}
+
+export { RegularButton, IconButton, IconTextButton, StatsCard };

@@ -1,10 +1,11 @@
 import React from "react";
-import { RegularButton } from "./Elements";
+import { RegularButton, StatsCard, IconTextButton } from "./Elements";
 
 // Import images
 import bedroom from "../assets/images/bedroom.jpg";
 import bar from "../assets/images/bar.jpg";
 import livingRoom from "../assets/images/living room.jpg";
+import wardrobe from "../assets/images/wardrobe.jpg";
 import user from "../assets/images/user.jpg";
 import user2 from "../assets/images/user2.jpg";
 
@@ -44,11 +45,36 @@ const HeroSection = () => {
   );
 };
 
+// Stats section component
+
+const Stats = () => {
+  return (
+    <section id="stats-section">
+      <div className="image">
+        <img src={wardrobe} alt="wardrobe" />
+      </div>
+
+      <div className="stats">
+        <StatsCard title="the 6K+" value={<>Specializing <br/> in luxury</>} />
+        <StatsCard title="14" value={<>Progress <br/> Work</>} />
+        <StatsCard title="9" value={<>Total <br/> Work</>} />
+      </div>
+
+      <div className="license-info">
+        <p>Licensed and award-winning interior design firm specializing in luxury residential interiors.</p>
+        <IconTextButton text="read more" />
+      </div>
+
+    </section>
+  );
+}
+
 // Home component
 const Home = () => {
   return (
     <>
       <HeroSection />
+      <Stats />
     </>
   );
 };

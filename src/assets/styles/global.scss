@@ -1,14 +1,4 @@
-// @font-face {
-//   font-family: "Montserrat", sans-serif;
-//   src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
-// }
-
-// @font-face {
-//   font-family: "Raleway", sans-serif;
-//   src: local('Raleway'), url(../fonts/Raleway/Raleway-VariableFont_wght.ttf) format('truetype');
-// }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   // colors
@@ -20,9 +10,11 @@
   // font sizes
   --base-font-size: clamp(12px, 1.1vw, 32px);
   --h4-font-size: calc(var(--base-font-size) * 1);
-  --h3-font-size: calc(var(--base-font-size) * 1.2);
-  --h2-font-size: calc(var(--base-font-size) * 1.618);
-  --h1-font-size: calc(var(--h2-font-size) * 3.618);
+  --h3-font-size: calc(var(--h4-font-size) * 1.2);
+  --h2-font-size: calc(var(--base-font-size) * 4);
+  --h1-font-size: calc(var(--base-font-size) * 7.5);
+
+  --border: 1px solid var(--color-text-1);
 }
 
 * {
@@ -52,7 +44,7 @@
 h1 {
   text-transform: capitalize;
   font-size: var(--h1-font-size);
-  line-height: calc(var(--h1-font-size) / 1.8);
+  line-height: calc(var(--h1-font-size) / 1);
 }
 
 h2 {
@@ -113,6 +105,11 @@ button,
   border-radius: 24px;
   padding: 6px 16px;
   text-transform: capitalize;
+  cursor: pointer;
+
+  &:hover{
+    background-color: var(--color-text-1);
+  }
 }
 
 .btn-ic {
@@ -122,8 +119,14 @@ button,
 
 .btn-txt-ic {
   background: none;
+  &:hover{
+    background: none;
+    p,span{
+      background: var(--color-text-1);
+    }
+  }
   @extend .row;
-  gap: -1px;
+  gap: 0;
   p {
     @extend button;
   }
@@ -137,6 +140,27 @@ button,
   color: var(--color-background);
   border-radius: 24px;
   text-transform: uppercase;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: inherit;
+  border-radius: 3rem;
+  overflow: hidden;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    aspect-ratio: inherit;
+    object-fit: cover;
+    object-position: center;
+    transition-duration: 1s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
 }
 
 html {
@@ -154,6 +178,10 @@ html {
       height: 100%;
       overflow-y: scroll;
       position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       &::-webkit-scrollbar {
         width: 8px;
       }
@@ -169,6 +197,7 @@ html {
         width: 100%;
         height: 7vh;
         position: sticky;
+        z-index: 999;
         top: 0;
         backdrop-filter: blur(50px);
         nav {
@@ -224,6 +253,7 @@ html {
             width: 100%;
             @extend .column;
             align-items: center;
+            gap: 0.25rem;
 
             span {
               @extend .row;
@@ -253,55 +283,101 @@ html {
               z-index: 2;
             }
 
-            .image {
-              width: 100%;
-              aspect-ratio: inherit;
-              border-radius: 3rem;
-              overflow: hidden;
-              z-index: 1;
+            // removed image class from here
 
-              img {
-                width: 100%;
-                aspect-ratio: inherit;
-                object-fit: cover;
-                object-position: center;
-                transition-duration: 1s;
-              }
-              &:hover {
-                img {
-                  transform: scale(1.1);
-                }
-              }
-            }
-
-            .founders{
+            .founders {
               position: absolute;
               bottom: -6rem;
-              right: .5rem;
+              right: 0.5rem;
               z-index: 2;
               @extend .column;
               align-items: flex-end;
-              gap: .5rem;
+              gap: 0.5rem;
 
-              .photos{
+              .photos {
                 @extend .row;
                 gap: 1rem;
 
-                img{
+                img {
                   height: 4.5rem;
                   aspect-ratio: 1;
                   border-radius: 50%;
-                  box-shadow: 0 0 0 .5rem var(--color-background);
+                  box-shadow: 0 0 0 0.5rem var(--color-background);
                 }
               }
-              h3{
+              h3 {
                 text-align: right;
               }
             }
           }
         }
+
+        #stats-section {
+          // border: var(--border);
+          height: fit-content;
+
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 1rem;
+
+          .image,
+          .stats,
+          .license-info{
+            height: 25rem;
+          }
+
+          .image {
+            max-width: 300px;
+            img{
+              height: 100%;
+            }
+          }
+
+          .stats {
+            max-width: 100%;
+            min-width: 600px;
+            @extend .row;
+            align-items: flex-end;
+            gap: 1rem;
+
+            :nth-child(2) {
+              border-left: var(--border);
+              border-right: var(--border);
+            }
+
+            .stats-card {
+              height: 70%;
+              width: 15rem;
+              padding: 0 2.5rem;
+              @extend .column;
+              justify-content: flex-end;
+              gap: 0.5rem;
+              *{
+                border: none;
+              }
+            }
+          }
+
+          .license-info{
+            width: 100%;
+            max-width: 20vw;
+            @extend .column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 1rem;
+
+            p{
+              text-align: right;
+            }
+          }
+        }
       }
       footer {
+        height: 0;
+        display: flex;
+        position: static;
         .social-links {
           .social-link {
           }
