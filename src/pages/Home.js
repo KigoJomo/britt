@@ -9,6 +9,7 @@ import livingRoom from "../assets/images/living room.jpg";
 import wardrobe from "../assets/images/wardrobe.jpg";
 import user from "../assets/images/user.jpg";
 import user2 from "../assets/images/user2.jpg";
+import star from "../assets/images/star.png";
 
 // Hero section component
 const HeroSection = () => {
@@ -69,6 +70,19 @@ const Stats = () => {
   );
 }
 
+const SliderContent = () => {
+  return (
+    <>
+      <img src={star} alt="star" />
+      <h2>/</h2>
+      <h2>Brittocharette luxurious interior</h2>
+      <img src={star} alt="star" />
+      <h2>/</h2>
+      <h2>miami-based interior design</h2>
+    </>
+  );
+}
+
 // Showroom section component
 const Showroom = () => {
   return (
@@ -86,6 +100,15 @@ const Showroom = () => {
 
       <div className="image">
           <img src={study} alt="study/office"/>
+      </div>
+
+      <div className="slider-wrapper">
+        <div className="slider">
+          <SliderContent />
+          <SliderContent />
+          <SliderContent />
+          <SliderContent />
+        </div>
       </div>
     </section>
   );
