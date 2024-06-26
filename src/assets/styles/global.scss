@@ -63,8 +63,8 @@ h3,
 h4,
 button {
   text-transform: capitalize;
-  font-size: var(--h4-font-size);
-  line-height: calc(var(--h4-font-size) * 1.4);
+  font-size: var(--h3-font-size);
+  line-height: calc(var(--h3-font-size) * 1.4);
 }
 
 p,
@@ -103,7 +103,7 @@ button,
   background-color: var(--color-text);
   color: var(--color-background);
   border-radius: 24px;
-  padding: 6px 16px;
+  padding: .5rem 1.5rem;
   text-transform: capitalize;
   cursor: pointer;
 
@@ -131,7 +131,12 @@ button,
     @extend button;
   }
   span {
+    height: 100%;
+    display: flex;
+    align-items: center;
     @extend button;
+    font-size: var(--h3-font-size);
+    line-height: calc(var(--h3-font-size) / 1.4);
   }
 }
 
@@ -314,7 +319,7 @@ html {
 
         #stats-section {
           // border: var(--border);
-          height: fit-content;
+          height: 27rem;
 
           display: flex;
           flex-direction: row;
@@ -325,7 +330,7 @@ html {
           .image,
           .stats,
           .license-info{
-            height: 25rem;
+            height: 100%;
           }
 
           .image {

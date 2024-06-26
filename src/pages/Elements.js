@@ -21,7 +21,7 @@ const IconTextButton = (props) => {
     <>
       <button className="btn-txt-ic">
         <p>{props.text}</p>
-        <span>&#x2192;</span>
+        <span>&#x279c;</span>
       </button>
     </>
   );

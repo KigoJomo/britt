@@ -60,8 +60,8 @@ button,
 .btn-txt-ic span,
 .btn-txt-ic p {
   text-transform: capitalize;
-  font-size: var(--h4-font-size);
-  line-height: calc(var(--h4-font-size) * 1.4);
+  font-size: var(--h3-font-size);
+  line-height: calc(var(--h3-font-size) * 1.4);
 }
 
 p,
@@ -96,7 +96,7 @@ button, .btn-txt-ic span, .btn-txt-ic p,
   background-color: var(--color-text);
   color: var(--color-background);
   border-radius: 24px;
-  padding: 6px 16px;
+  padding: 0.5rem 1.5rem;
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -120,6 +120,14 @@ button:hover, .btn-txt-ic span:hover, .btn-txt-ic p:hover,
 .btn-txt-ic:hover p, .btn-txt-ic:hover span {
   background: var(--color-text-1);
 }
+.btn-txt-ic span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--h3-font-size);
+  line-height: calc(var(--h3-font-size) / 1.4);
+}
+
 .social-tags {
   background-color: var(--color-text-1);
   color: var(--color-background);
@@ -272,8 +280,7 @@ html body #root main #hero-section .hero-image .founders h3 {
   text-align: right;
 }
 html body #root main #stats-section {
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 27rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -283,7 +290,7 @@ html body #root main #stats-section {
 html body #root main #stats-section .image,
 html body #root main #stats-section .stats,
 html body #root main #stats-section .license-info {
-  height: 25rem;
+  height: 100%;
 }
 html body #root main #stats-section .image {
   max-width: 300px;
