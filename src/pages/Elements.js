@@ -39,12 +39,24 @@ const StatsCard = (props) => {
   )
 }
 
+// const Image = (props) => {
+//   return (
+//     <div className="image">
+//       <img src={props.image} alt={props.image} />
+//     </div>
+//   );
+// }
+
 const Image = (props) => {
   return (
-    <div className="image">
-      <img src={props.image} alt={props.image} />
+    <div className="image-container">
+      {props.heading && <h2>{props.heading}</h2>}
+      <div className="image">
+        <img src={props.image} alt={props.image} />
+      </div>
+      {props.button && <IconButton />}
     </div>
   );
-}
+};
 
 export { RegularButton, IconButton, IconTextButton, StatsCard, Image };

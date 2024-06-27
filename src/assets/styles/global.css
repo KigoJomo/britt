@@ -146,24 +146,53 @@ button:hover, .btn-txt-ic p:hover,
   text-transform: uppercase;
 }
 
-.image {
+.image-container {
   width: 100%;
-  aspect-ratio: inherit;
+  position: relative;
+}
+.image-container h2,
+.image-container button,
+.image-container .btn-txt-ic p,
+.btn-txt-ic .image-container p,
+.image-container .btn-txt-ic span,
+.btn-txt-ic .image-container span {
+  position: absolute;
+  z-index: 2;
+}
+.image-container h2 {
+  top: -0.5vh;
+  right: 0;
+  font-size: 3vw;
+  line-height: 6.5vh;
+  letter-spacing: 0.3rem;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.image-container button, .image-container .btn-txt-ic p, .btn-txt-ic .image-container p,
+.image-container .btn-txt-ic span,
+.btn-txt-ic .image-container span {
+  right: 1%;
+  bottom: 2%;
+}
+.image-container .image {
+  width: 100%;
+  height: 100%;
   border-radius: 3rem;
   overflow: hidden;
   z-index: 1;
   filter: url(#round);
 }
-.image img {
+.image-container .image img {
+  height: 100%;
   width: 100%;
-  aspect-ratio: inherit;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
   transition-duration: 1s;
 }
-.image:hover img {
+.image-container .image:hover img {
   transform: scale(1.1);
 }
 
@@ -282,6 +311,9 @@ html body #root main #hero-section .hero-image .btn-txt-ic span,
   box-shadow: 0px 0px 0px 0.75rem var(--color-background);
   z-index: 2;
 }
+html body #root main #hero-section .hero-image .image-container {
+  aspect-ratio: 21/9;
+}
 html body #root main #hero-section .hero-image .founders {
   position: absolute;
   bottom: -6rem;
@@ -310,16 +342,18 @@ html body #root main #stats-section {
   justify-content: flex-start;
   gap: 1rem;
 }
-html body #root main #stats-section .image,
+html body #root main #stats-section .image-container,
 html body #root main #stats-section .stats,
 html body #root main #stats-section .license-info {
   height: 100%;
 }
-html body #root main #stats-section .image {
+html body #root main #stats-section .image-container {
   max-width: 300px;
+}
+html body #root main #stats-section .image-container .image {
   filter: none;
 }
-html body #root main #stats-section .image img {
+html body #root main #stats-section .image-container .image img {
   height: 100%;
 }
 html body #root main #stats-section .stats {
@@ -354,6 +388,7 @@ html body #root main #stats-section .license-info p {
 }
 html body #root main #showroom {
   padding: 7rem 7rem;
+  padding-bottom: 10rem;
   align-items: center;
   justify-content: center;
   gap: 2%;
@@ -362,11 +397,11 @@ html body #root main #showroom {
 html body #root main #showroom .left {
   width: 40%;
 }
-html body #root main #showroom .image {
+html body #root main #showroom .image-container {
   width: 60%;
   aspect-ratio: 4/3;
 }
-html body #root main #showroom .image img {
+html body #root main #showroom .image-container .image img {
   -webkit-clip-path: polygon(0 0, 70% 0, 76% 24%, 100% 30%, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 70% 0, 76% 24%, 100% 30%, 100% 100%, 0 100%);
 }
@@ -410,7 +445,8 @@ html body #root main #showroom .slider-wrapper .slider img {
      object-fit: contain;
 }
 html body #root main #showcase {
-  height: 100dvh;
+  height: 55vw;
+  width: 100%;
   padding: 7rem 5rem;
   justify-content: center;
   gap: 1rem;
@@ -436,46 +472,14 @@ html body #root main #showcase .centerpiece .title h3 {
   text-transform: uppercase;
 }
 html body #root main #showcase .centerpiece .image-container {
-  width: 100%;
   height: 85%;
-  position: relative;
-}
-html body #root main #showcase .centerpiece .image-container h2,
-html body #root main #showcase .centerpiece .image-container button,
-html body #root main #showcase .centerpiece .image-container .btn-txt-ic p,
-.btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
-html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
-.btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
-  position: absolute;
-  z-index: 2;
-}
-html body #root main #showcase .centerpiece .image-container h2 {
-  top: -0.5vh;
-  right: 0;
-  font-size: 6vh;
-  line-height: 6.5vh;
-  letter-spacing: 0.3rem;
-  text-align: right;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-html body #root main #showcase .centerpiece .image-container button, html body #root main #showcase .centerpiece .image-container .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
-html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
-.btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
-  right: 1%;
-  bottom: 2%;
+  max-height: 56vh;
 }
 html body #root main #showcase .centerpiece .image-container .image {
-  width: 100%;
-  height: 100%;
   max-height: 56vh;
   border-radius: 0;
-  display: inline-block;
 }
 html body #root main #showcase .centerpiece .image-container .image img {
-  height: 100%;
-  width: 100%;
-  display: block;
   -webkit-clip-path: polygon(0 0, 38% 0%, 38% 6vh, 70% 6vh, 70% 13vh, 100% 13vh, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
           clip-path: polygon(0 0, 38% 0%, 38% 6vh, 70% 6vh, 70% 13vh, 100% 13vh, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
 }

@@ -121,14 +121,21 @@ const Showcase = () => {
           <h3>modern villa</h3>
           <p>portofino tower</p>
         </div>
-        <div className="image-container">
-          <h2>Britto living <br /> room </h2>
-          <Image image={livingRoom} />
-          <IconButton />
-        </div>
+
+        <Image
+          heading={
+            <>
+              Britto living <br /> room
+            </>
+          }
+          image={livingRoom}
+          button
+        />
       </div>
 
-      <div className="sub"></div>
+      <div className="sub">
+        <Image image={bathtub} button />
+      </div>
     </section>
   );
 }
