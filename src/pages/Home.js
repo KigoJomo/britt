@@ -6,6 +6,7 @@ import bedroom from "../assets/images/bedroom.webp";
 import bar from "../assets/images/bar.webp";
 import study from "../assets/images/study.webp";
 import livingRoom from "../assets/images/living room.webp";
+import bathtub from "../assets/images/bathtub.webp";
 import shower from "../assets/images/shower.webp";
 import wardrobe from "../assets/images/wardrobe.webp";
 import user from "../assets/images/user.webp";

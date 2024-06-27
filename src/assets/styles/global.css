@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --color-text: #141414;
-  --color-background: #ffffff;
-  --color-background-1: #d1d1d1;
+  --color-background: #d4d1c9;
+  --color-background-1: #ccc9a3;
   --color-text-1: #333333;
   --base-font-size: clamp(12px, 1.1vw, 32px);
   --h4-font-size: calc(var(--base-font-size) * 1);
@@ -28,7 +28,8 @@
   gap: 24px;
 }
 
-.column, html body #root main #showcase .centerpiece .title, html body #root main #showcase .centerpiece, html body #root main #showroom .left, html body #root main #stats-section .license-info, html body #root main #stats-section .stats .stats-card, html body #root main #hero-section .hero-image .founders, html body #root main #hero-section .heading, html body #root main #hero-section {
+.column, html body #root main #showcase .centerpiece .title, html body #root main #showcase .centerpiece,
+html body #root main #showcase .sub, html body #root main #showroom .left, html body #root main #stats-section .license-info, html body #root main #stats-section .stats .stats-card, html body #root main #hero-section .hero-image .founders, html body #root main #hero-section .heading, html body #root main #hero-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -179,8 +180,10 @@ html body {
 html body #root {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
+  background: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -229,13 +232,15 @@ html body #root header nav .right a::after {
 }
 html body #root main {
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-bottom: 10vh;
 }
 html body #root main .home-button {
   margin-left: 32px;
 }
 html body #root main section {
-  width: 100%;
+  width: 100dvw;
   padding: 3rem;
   overflow: hidden;
 }
@@ -405,17 +410,26 @@ html body #root main #showroom .slider-wrapper .slider img {
      object-fit: contain;
 }
 html body #root main #showcase {
-  padding: 7rem 3rem;
+  height: 100dvh;
+  padding: 7rem 5rem;
   justify-content: center;
   gap: 1rem;
 }
+html body #root main #showcase .centerpiece,
+html body #root main #showcase .sub {
+  height: 100%;
+  justify-content: space-between;
+  border: var(--border);
+}
 html body #root main #showcase .centerpiece {
   width: 60%;
-  gap: 3rem;
 }
 html body #root main #showcase .centerpiece .title {
+  height: 15%;
+  width: 100%;
+  justify-content: center;
   gap: 0.25rem;
-  padding-left: 2rem;
+  padding-left: 0rem;
 }
 html body #root main #showcase .centerpiece .title p,
 html body #root main #showcase .centerpiece .title h3 {
@@ -423,18 +437,24 @@ html body #root main #showcase .centerpiece .title h3 {
 }
 html body #root main #showcase .centerpiece .image-container {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 85%;
   position: relative;
 }
-html body #root main #showcase .centerpiece .image-container h2, html body #root main #showcase .centerpiece .image-container button, html body #root main #showcase .centerpiece .image-container .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
+html body #root main #showcase .centerpiece .image-container h2,
+html body #root main #showcase .centerpiece .image-container button,
+html body #root main #showcase .centerpiece .image-container .btn-txt-ic p,
+.btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
 html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
 .btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
   position: absolute;
+  z-index: 2;
 }
 html body #root main #showcase .centerpiece .image-container h2 {
-  top: -3%;
+  top: -0.5vh;
   right: 0;
-  line-height: calc(var(--h2-font-size) * 1.2);
+  font-size: 6vh;
+  line-height: 6.5vh;
+  letter-spacing: 0.3rem;
   text-align: right;
   text-transform: uppercase;
   font-weight: 500;
@@ -442,24 +462,28 @@ html body #root main #showcase .centerpiece .image-container h2 {
 html body #root main #showcase .centerpiece .image-container button, html body #root main #showcase .centerpiece .image-container .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
 html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
 .btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
-  right: 0;
-  bottom: 4%;
+  right: 1%;
+  bottom: 2%;
 }
 html body #root main #showcase .centerpiece .image-container .image {
   width: 100%;
-  aspect-ratio: inherit;
-  border: var(--border);
+  height: 100%;
+  max-height: 56vh;
+  border-radius: 0;
+  display: inline-block;
 }
 html body #root main #showcase .centerpiece .image-container .image img {
-  -webkit-clip-path: polygon(0 0, 40% 0%, 35% 10%, 70% 10%, 68% 23%, 100% 23%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
-          clip-path: polygon(0 0, 40% 0%, 35% 10%, 70% 10%, 68% 23%, 100% 23%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
+  height: 100%;
+  width: 100%;
+  display: block;
+  -webkit-clip-path: polygon(0 0, 38% 0%, 38% 6vh, 70% 6vh, 70% 13vh, 100% 13vh, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 38% 0%, 38% 6vh, 70% 6vh, 70% 13vh, 100% 13vh, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
 }
 html body #root main #showcase .centerpiece .image-container .image:hover img {
   transform: none;
 }
 html body #root main #showcase .sub {
   width: 40%;
-  height: 100%;
 }
 html body #root footer {
   height: 0;
