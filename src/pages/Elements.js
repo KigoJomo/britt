@@ -42,9 +42,7 @@ const StatsCard = (props) => {
 const Image = (props) => {
   return (
     <div className="image">
-      {props.title && <h2 className="overlay-title">{props.title}</h2>}
       <img src={props.image} alt={props.image} />
-      {props.button && <IconButton /> }
     </div>
   );
 }

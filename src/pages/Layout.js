@@ -2,7 +2,7 @@
 
 import { Outlet, Link, useLocation } from "react-router-dom";
 import "../assets/styles/global.scss";
-import logo from "../assets/images/britt-logo.png";
+import logo from "../assets/images/britt-logo.webp";
 
 const Layout = () => {
   const location = useLocation();

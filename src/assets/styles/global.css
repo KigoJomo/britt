@@ -110,6 +110,7 @@ button:hover, .btn-txt-ic p:hover,
 
 .btn-ic {
   border-radius: 50%;
+  aspect-ratio: 1/1 !important;
   font-size: var(--h2-font-size);
 }
 
@@ -311,6 +312,7 @@ html body #root main #stats-section .license-info {
 }
 html body #root main #stats-section .image {
   max-width: 300px;
+  filter: none;
 }
 html body #root main #stats-section .image img {
   height: 100%;
@@ -413,41 +415,51 @@ html body #root main #showcase .centerpiece {
 }
 html body #root main #showcase .centerpiece .title {
   gap: 0.25rem;
+  padding-left: 2rem;
 }
 html body #root main #showcase .centerpiece .title p,
 html body #root main #showcase .centerpiece .title h3 {
   text-transform: uppercase;
 }
-html body #root main #showcase .centerpiece .image {
+html body #root main #showcase .centerpiece .image-container {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
   position: relative;
+}
+html body #root main #showcase .centerpiece .image-container h2, html body #root main #showcase .centerpiece .image-container button, html body #root main #showcase .centerpiece .image-container .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
+html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
+.btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
+  position: absolute;
+}
+html body #root main #showcase .centerpiece .image-container h2 {
+  top: -3%;
+  right: 0;
+  line-height: calc(var(--h2-font-size) * 1.2);
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+html body #root main #showcase .centerpiece .image-container button, html body #root main #showcase .centerpiece .image-container .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image-container p,
+html body #root main #showcase .centerpiece .image-container .btn-txt-ic span,
+.btn-txt-ic html body #root main #showcase .centerpiece .image-container span {
+  right: 0;
+  bottom: 4%;
+}
+html body #root main #showcase .centerpiece .image-container .image {
+  width: 100%;
+  aspect-ratio: inherit;
   border: var(--border);
 }
-html body #root main #showcase .centerpiece .image button, html body #root main #showcase .centerpiece .image .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image p,
-html body #root main #showcase .centerpiece .image .btn-txt-ic span,
-.btn-txt-ic html body #root main #showcase .centerpiece .image span,
-html body #root main #showcase .centerpiece .image h2 {
-  position: absolute;
-  z-index: 2;
+html body #root main #showcase .centerpiece .image-container .image img {
+  -webkit-clip-path: polygon(0 0, 40% 0%, 35% 10%, 70% 10%, 68% 23%, 100% 23%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
+          clip-path: polygon(0 0, 40% 0%, 35% 10%, 70% 10%, 68% 23%, 100% 23%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
 }
-html body #root main #showcase .centerpiece .image h2 {
-  top: 0;
-  right: 0;
-  text-align: right;
-}
-html body #root main #showcase .centerpiece .image img {
-  -webkit-clip-path: polygon(0 0, 40% 0%, 40% 10%, 70% 10%, 70% 20%, 100% 20%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
-          clip-path: polygon(0 0, 40% 0%, 40% 10%, 70% 10%, 70% 20%, 100% 20%, 100% 75%, 85% 75%, 85% 100%, 0% 100%);
-}
-html body #root main #showcase .centerpiece .image button, html body #root main #showcase .centerpiece .image .btn-txt-ic p, .btn-txt-ic html body #root main #showcase .centerpiece .image p,
-html body #root main #showcase .centerpiece .image .btn-txt-ic span,
-.btn-txt-ic html body #root main #showcase .centerpiece .image span {
-  right: 0;
-  bottom: 0;
+html body #root main #showcase .centerpiece .image-container .image:hover img {
+  transform: none;
 }
 html body #root main #showcase .sub {
   width: 40%;
+  height: 100%;
 }
 html body #root footer {
   height: 0;

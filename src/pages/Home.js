@@ -1,16 +1,16 @@
 import React from "react";
-import { RegularButton, StatsCard, IconTextButton, Image } from "./Elements";
+import { RegularButton, StatsCard, IconTextButton, Image, IconButton } from "./Elements";
 
 // Import images
-import bedroom from "../assets/images/bedroom.jpg";
-import bar from "../assets/images/bar.jpg";
-import study from "../assets/images/study.jpg";
-import livingRoom from "../assets/images/living room.jpg";
-import shower from "../assets/images/shower.jpg";
-import wardrobe from "../assets/images/wardrobe.jpg";
-import user from "../assets/images/user.jpg";
-import user2 from "../assets/images/user2.jpg";
-import star from "../assets/images/star.png";
+import bedroom from "../assets/images/bedroom.webp";
+import bar from "../assets/images/bar.webp";
+import study from "../assets/images/study.webp";
+import livingRoom from "../assets/images/living room.webp";
+import shower from "../assets/images/shower.webp";
+import wardrobe from "../assets/images/wardrobe.webp";
+import user from "../assets/images/user.webp";
+import user2 from "../assets/images/user2.webp";
+import star from "../assets/images/star.webp";
 
 // Hero section component
 const HeroSection = () => {
@@ -114,23 +114,22 @@ const Showroom = () => {
 const Showcase = () => {
   return (
     <section id="showcase">
-
       <div className="centerpiece">
         <div className="title">
           <p>ritz-carlton ph</p>
           <h3>modern villa</h3>
           <p>portofino tower</p>
         </div>
-        <Image image={livingRoom}
-          title={<>britto <br /> living room</>}
-          button={true}
-        />
+        <div className="image-container">
+          <h2>Britto living <br /> room </h2>
+          <Image image={livingRoom} />
+          <IconButton />
+        </div>
       </div>
 
-      <div className="sub">
-      </div>
+      <div className="sub"></div>
     </section>
-  )
+  );
 }
 
 // Home component

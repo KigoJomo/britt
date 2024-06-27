@@ -115,6 +115,7 @@ button,
 
 .btn-ic {
   border-radius: 50%;
+  aspect-ratio: 1/1 !important;
   font-size: var(--h2-font-size);
 }
 
@@ -345,6 +346,7 @@ html {
 
           .image {
             max-width: 300px;
+            filter: none;
             img {
               height: 100%;
             }
@@ -475,50 +477,67 @@ html {
             .title {
               @extend .column;
               gap: 0.25rem;
+              padding-left: 2rem;
               p,
               h3 {
                 text-transform: uppercase;
               }
             }
-            .image {
-              width: 100%;
-              aspect-ratio: 16/10;
-              position: relative;
-              border: var(--border);
 
-              button,
-              h2{
+            .image-container {
+              width: 100%;
+              aspect-ratio: 4/3;
+              position: relative;
+
+              h2, button {
                 position: absolute;
-                z-index: 2;
               }
+
               h2{
-                top: 0;
+                top: -3%;
                 right: 0;
+                line-height: calc(var(--h2-font-size) * 1.2);
                 text-align: right;
-              }
-              img {
-                clip-path: polygon(
-                  0 0,
-                  40% 0%,
-                  40% 10%,
-                  70% 10%,
-                  70% 20%,
-                  100% 20%,
-                  100% 75%,
-                  85% 75%,
-                  85% 100%,
-                  0% 100%
-                );
+                text-transform: uppercase;
+                font-weight: 500;
               }
               button{
                 right: 0;
-                bottom: 0;
+                bottom: 4%;
+              }
+
+              .image {
+                width: 100%;
+                aspect-ratio: inherit;
+                border: var(--border);
+
+                img {
+                  clip-path: polygon(
+                    0 0,
+                    40% 0%,
+                    35% 10%,
+                    70% 10%,
+                    68% 23%,
+                    100% 23%,
+                    100% 75%,
+                    85% 75%,
+                    85% 100%,
+                    0% 100%
+                  );
+                }
+
+                &:hover{
+                  img{
+                    transform: none;
+                  }
+                }
               }
             }
           }
 
           .sub {
             width: 40%;
+            height: 100%;
           }
         }
       }
