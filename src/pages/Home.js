@@ -1,11 +1,12 @@
 import React from "react";
-import { RegularButton, StatsCard, IconTextButton } from "./Elements";
+import { RegularButton, StatsCard, IconTextButton, Image } from "./Elements";
 
 // Import images
 import bedroom from "../assets/images/bedroom.jpg";
 import bar from "../assets/images/bar.jpg";
 import study from "../assets/images/study.jpg";
 import livingRoom from "../assets/images/living room.jpg";
+import shower from "../assets/images/shower.jpg";
 import wardrobe from "../assets/images/wardrobe.jpg";
 import user from "../assets/images/user.jpg";
 import user2 from "../assets/images/user2.jpg";
@@ -27,9 +28,8 @@ const HeroSection = () => {
 
       <div className="hero-image">
         <RegularButton text="best of the year" />
-        <div className="image">
-          <img src={livingRoom} alt="Living room" />
-        </div>
+
+        <Image image={study} />
 
         <div className="founders">
           <div className="photos">
@@ -51,9 +51,7 @@ const HeroSection = () => {
 const Stats = () => {
   return (
     <section id="stats-section">
-      <div className="image">
-        <img src={wardrobe} alt="wardrobe" />
-      </div>
+      <Image image={shower} />
 
       <div className="stats">
         <StatsCard title="the 6K+" value={<>Specializing <br/> in luxury</>} />
@@ -98,9 +96,7 @@ const Showroom = () => {
         <IconTextButton text="about us" />
       </div>
 
-      <div className="image">
-          <img src={study} alt="study/office"/>
-      </div>
+      <Image image={wardrobe}/>
 
       <div className="slider-wrapper">
         <div className="slider">
@@ -114,6 +110,29 @@ const Showroom = () => {
   );
 }
 
+// Showcase component
+const Showcase = () => {
+  return (
+    <section id="showcase">
+
+      <div className="centerpiece">
+        <div className="title">
+          <p>ritz-carlton ph</p>
+          <h3>modern villa</h3>
+          <p>portofino tower</p>
+        </div>
+        <Image image={livingRoom}
+          title={<>britto <br /> living room</>}
+          button={true}
+        />
+      </div>
+
+      <div className="sub">
+      </div>
+    </section>
+  )
+}
+
 // Home component
 const Home = () => {
   return (
@@ -121,6 +140,7 @@ const Home = () => {
       <HeroSection />
       <Stats />
       <Showroom />
+      <Showcase />
     </>
   );
 };

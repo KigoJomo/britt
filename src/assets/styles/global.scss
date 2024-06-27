@@ -159,6 +159,7 @@ button,
   border-radius: 3rem;
   overflow: hidden;
   z-index: 1;
+  filter: url(#round);
 
   img {
     width: 100%;
@@ -262,6 +263,7 @@ html {
           @extend .column;
           align-items: center;
           gap: 5rem;
+          overflow: visible;
           .heading {
             width: 100%;
             @extend .column;
@@ -403,14 +405,17 @@ html {
           .image {
             width: 60%;
             aspect-ratio: 4/3;
-            clip-path: polygon(
-              0 0,
-              80% 0,
-              80% 20%,
-              100% 20%,
-              100% 100%,
-              0% 100%
-            );
+
+            img {
+              clip-path: polygon(
+                0 0,
+                70% 0,
+                76% 24%,
+                100% 30%,
+                100% 100%,
+                0 100%
+              );
+            }
           }
 
           .slider-wrapper {
@@ -418,7 +423,7 @@ html {
             bottom: 0%;
             width: 100%;
             overflow: hidden;
-              background: var(--color-background-1);
+            background: var(--color-background-1);
 
             .slider {
               display: flex;
@@ -426,7 +431,7 @@ html {
               justify-content: flex-start;
               gap: 2rem;
               animation: scroll 20s linear infinite;
-              &:hover{
+              &:hover {
                 animation-play-state: paused;
               }
 
@@ -453,6 +458,67 @@ html {
                 object-fit: contain;
               }
             }
+          }
+        }
+
+        #showcase {
+          padding: 7rem 3rem;
+          @extend .row;
+          justify-content: center;
+          gap: 1rem;
+
+          .centerpiece {
+            width: 60%;
+            @extend .column;
+            gap: 3rem;
+
+            .title {
+              @extend .column;
+              gap: 0.25rem;
+              p,
+              h3 {
+                text-transform: uppercase;
+              }
+            }
+            .image {
+              width: 100%;
+              aspect-ratio: 16/10;
+              position: relative;
+              border: var(--border);
+
+              button,
+              h2{
+                position: absolute;
+                z-index: 2;
+              }
+              h2{
+                top: 0;
+                right: 0;
+                text-align: right;
+              }
+              img {
+                clip-path: polygon(
+                  0 0,
+                  40% 0%,
+                  40% 10%,
+                  70% 10%,
+                  70% 20%,
+                  100% 20%,
+                  100% 75%,
+                  85% 75%,
+                  85% 100%,
+                  0% 100%
+                );
+              }
+              button{
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+
+          .sub {
+            width: 40%;
           }
         }
       }
