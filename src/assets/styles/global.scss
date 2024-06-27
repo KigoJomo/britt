@@ -167,7 +167,7 @@ button,
 
   h2 {
     top: -0.5vh;
-    right: 0;
+    right: 2%;
     font-size: calc(3vw);
     line-height: calc(6.5vh);
     letter-spacing: 0.3rem;
@@ -504,7 +504,7 @@ html {
         #showcase {
           height: 55vw;
           width: 100%;
-          padding: 7rem 5rem;
+          padding: 3rem 5rem;
           @extend .row;
           justify-content: center;
           gap: 1rem;
@@ -513,8 +513,9 @@ html {
           .sub {
             height: 100%;
             @extend .column;
-            justify-content: space-between;
-            border: var(--border);
+            justify-content: center;
+            gap: 2rem;
+            // border: var(--border);
           }
 
           .centerpiece {
@@ -558,7 +559,7 @@ html {
 
                 &:hover {
                   img {
-                    transform: none;
+                    transform: scale(1) rotateZ(-1deg);
                   }
                 }
               }
@@ -567,8 +568,31 @@ html {
 
           .sub {
             width: 40%;
-            // .image-container {
-            // }
+            gap: 1rem;
+            padding: 0 2rem;
+            .image-container {
+              max-height: 70%;
+              &:hover {
+                img {
+                  transform: scale(1) rotateZ(1deg);
+                }
+              }
+
+              img {
+                border-radius: 0;
+                clip-path: polygon(
+                  0% 0%,
+                  100% 0%,
+                  100% 77%,
+                  75% 77%,
+                  75% 100%,
+                  0% 100%
+                );
+              }
+            }
+            h3 {
+              font-size: calc(var(--h3-font-size) * 1.3);
+            }
           }
         }
       }

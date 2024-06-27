@@ -1,5 +1,5 @@
 import React from "react";
-import { RegularButton, StatsCard, IconTextButton, Image, IconButton } from "./Elements";
+import { RegularButton, StatsCard, IconTextButton, Image } from "./Elements";
 
 // Import images
 import bedroom from "../assets/images/bedroom.webp";
@@ -135,6 +135,11 @@ const Showcase = () => {
 
       <div className="sub">
         <Image image={bathtub} button />
+        <h3>Boca Modern <br/> Sofa Brittocharette</h3>
+        <p>
+          Discover our portfolio and reach out with any questions. We're here to bring your design aspirations to life.
+        </p>
+        <IconTextButton text="show more" />
       </div>
     </section>
   );
