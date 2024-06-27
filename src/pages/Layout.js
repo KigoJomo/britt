@@ -37,8 +37,18 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>
+      <footer className="footer">
         <div className="social-links"></div>
+        <div className="info">
+          <p>We invite you to connect to our team for more information.</p>
+          <p>Let's Stay Connected</p>
+          <p>© 2010 All Rights <br/> Reserved</p>
+        </div>
+        <div className="contact-banner">
+          <h1>contact</h1>
+          <span></span>
+          <h1>us</h1>
+        </div>
       </footer>
     </>
   );

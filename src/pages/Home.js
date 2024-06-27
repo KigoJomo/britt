@@ -145,6 +145,7 @@ const Showcase = () => {
   );
 }
 
+
 // Home component
 const Home = () => {
   return (

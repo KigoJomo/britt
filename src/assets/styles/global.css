@@ -21,14 +21,17 @@
   transition: all 0.3s ease;
 }
 
-.row, html body #root main #showcase, html body #root main #showroom, html body #root main #stats-section .stats, html body #root main #hero-section .hero-image .founders .photos, html body #root main #hero-section .heading span, html body #root header nav .left, html body #root header nav, .btn-txt-ic {
+.row, html body #root footer .contact-banner,
+html body #root .footer .contact-banner, html body #root footer .info,
+html body #root .footer .info, html body #root main #showcase, html body #root main #showroom, html body #root main #stats-section .stats, html body #root main #hero-section .hero-image .founders .photos, html body #root main #hero-section .heading span, html body #root header nav .left, html body #root header nav, .btn-txt-ic {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 24px;
 }
 
-.column, html body #root main #showcase .centerpiece .title, html body #root main #showcase .centerpiece,
+.column, html body #root footer,
+html body #root .footer, html body #root main #showcase .centerpiece .title, html body #root main #showcase .centerpiece,
 html body #root main #showcase .sub, html body #root main #showroom .left, html body #root main #stats-section .license-info, html body #root main #stats-section .stats .stats-card, html body #root main #hero-section .hero-image .founders, html body #root main #hero-section .heading, html body #root main #hero-section {
   display: flex;
   flex-direction: column;
@@ -203,12 +206,12 @@ html {
 }
 html body {
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 html body #root {
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
@@ -218,14 +221,7 @@ html body #root {
   gap: 0;
 }
 html body #root::-webkit-scrollbar {
-  width: 8px;
-}
-html body #root::-webkit-scrollbar-track {
-  background: transparent;
-}
-html body #root::-webkit-scrollbar-thumb {
-  background: var(--color-text-1);
-  border-radius: 8px;
+  display: none;
 }
 html body #root header {
   width: 100%;
@@ -505,8 +501,68 @@ html body #root main #showcase .sub .image-container img {
 html body #root main #showcase .sub h3 {
   font-size: calc(var(--h3-font-size) * 1.3);
 }
-html body #root footer {
-  height: 0;
-  display: flex;
-  position: static;
+html body #root footer,
+html body #root .footer {
+  width: 100%;
+  gap: 0;
+  background: var(--color-text-1);
+  position: relative;
+}
+html body #root footer::after,
+html body #root .footer::after {
+  position: absolute;
+  content: "";
+  width: 100dvw;
+  height: 5%;
+  bottom: -5%;
+  background: var(--color-text-1);
+}
+html body #root footer .social-links, html body #root footer .info, html body #root footer .contact-banner,
+html body #root .footer .social-links,
+html body #root .footer .info,
+html body #root .footer .contact-banner {
+  width: 100vw;
+}
+html body #root footer .social-links,
+html body #root .footer .social-links {
+  height: 300px;
+  border-top: var(--border);
+  background: var(--color-background);
+}
+html body #root footer .info,
+html body #root .footer .info {
+  padding: 2rem 5rem;
+  justify-content: space-between;
+  background: var(--color-text-1);
+}
+html body #root footer .info p,
+html body #root .footer .info p {
+  width: 20%;
+  color: var(--color-background);
+}
+html body #root footer .info p:last-of-type,
+html body #root .footer .info p:last-of-type {
+  text-align: right;
+}
+html body #root footer .contact-banner,
+html body #root .footer .contact-banner {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0rem 0rem;
+  padding-top: 1rem;
+  background: inherit;
+  justify-content: center;
+}
+html body #root footer .contact-banner h1,
+html body #root .footer .contact-banner h1 {
+  color: var(--color-background);
+  font-size: calc(var(--h1-font-size) * 1.8);
+  line-height: calc(var(--h1-font-size) * 1.8);
+  text-transform: uppercase;
+}
+html body #root footer .contact-banner span,
+html body #root .footer .contact-banner span {
+  height: 64px;
+  aspect-ratio: 1;
+  background: url(../images/star-white.png) center/cover no-repeat;
 }
