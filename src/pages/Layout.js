@@ -1,6 +1,7 @@
 // Layout .js
 
 import { Outlet, Link, useLocation } from "react-router-dom";
+import Footer from "./Footer";
 import "../assets/styles/global.scss";
 import logo from "../assets/images/britt-logo.webp";
 
@@ -37,19 +38,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>
-        <div className="social-links"></div>
-        <div className="info">
-          <p>We invite you to connect to our team for more information.</p>
-          <p>Let's Stay Connected</p>
-          <p>© 2010 All Rights <br/> Reserved</p>
-        </div>
-        <div className="contact-banner">
-          <h1>contact</h1>
-          <span></span>
-          <h1>us</h1>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
