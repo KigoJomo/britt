@@ -37,7 +37,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className="footer">
+      <footer>
         <div className="social-links"></div>
         <div className="info">
           <p>We invite you to connect to our team for more information.</p>
