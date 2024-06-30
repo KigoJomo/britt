@@ -222,6 +222,16 @@ html {
         display: none;
       }
 
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 100px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       header {
         width: 100%;
         height: 7vh;
@@ -542,7 +552,13 @@ html {
                     70% 6vh,
                     70% 13vh,
                     100% 13vh,
-                    100% 75%, 92% 75%, 86% 78%, 85% 86%, 85% 94%, 85% 100%, 0 100%
+                    100% 75%,
+                    92% 75%,
+                    86% 78%,
+                    85% 86%,
+                    85% 94%,
+                    85% 100%,
+                    0 100%
                   );
                 }
 
@@ -571,7 +587,13 @@ html {
                 border-radius: 0;
                 clip-path: polygon(
                   100% 0,
-                  100% 75%, 92% 75%, 79% 77%, 74% 84%, 74% 93%, 74% 100%, 0 100%,
+                  100% 75%,
+                  92% 75%,
+                  79% 77%,
+                  74% 84%,
+                  74% 93%,
+                  74% 100%,
+                  0 100%,
                   0 0
                 );
               }
@@ -635,7 +657,7 @@ html {
               left: 78.5%;
             }
 
-            .wheel-white{
+            .wheel-white {
               height: 50%;
               bottom: 24%;
               left: 21%;
