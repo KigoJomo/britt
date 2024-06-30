@@ -532,6 +532,8 @@ html body #root footer .social-links .links-container {
 }
 html body #root footer .social-links .links-container * {
   position: absolute;
+  transition: left 0.5s ease-out, opacity 0.3s ease, bottom 1s linear, transform 1.5s ease;
+  opacity: 1;
 }
 html body #root footer .social-links .links-container .wheel-white,
 html body #root footer .social-links .links-container .wheel-black,
@@ -609,6 +611,12 @@ html body #root footer .social-links .links-container .linkedIn {
   bottom: 49%;
   left: 62.5%;
   transform: rotateZ(-32deg);
+}
+html body #root footer .social-links .hidden * {
+  left: 0% !important;
+  bottom: 120% !important;
+  transform: rotateZ(100deg) !important;
+  opacity: 0;
 }
 html body #root footer .info {
   padding: 2rem 5rem;

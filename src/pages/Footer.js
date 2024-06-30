@@ -1,60 +1,54 @@
-import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useRef, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import ConsultWheelBlack from "../assets/images/consult-wheel-black.webp";
 import ConsultWheelWhite from "../assets/images/consult-wheel-white.webp";
 
-const fadeInVariants = {
-  hidden: { opacity: 0, bottom: "120%" },
-  vimeo: { opacity: 1, bottom: "77%", transition: { duration: 0.9 } },
-  pinterest: { opacity: 1, bottom: "8.5%", transition: { duration: 0.6 } },
-  twitter: { opacity: 1, bottom: "3.25%", transition: { duration: 0.7 } },
-  facebook: { opacity: 1, bottom: "30%", transition: { duration: 0.8 } },
-  instagram: { opacity: 1, bottom: "18%", transition: { duration: 0.7 } },
-  youtube: { opacity: 1, bottom: "0%", transition: { duration: 0.5 } },
-  linkedIn: { opacity: 1, bottom: "49%", transition: { duration: 0.8 } },
-};
-
-const ScrollAnimationWrapper = ({ children, variantKey, username }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
+const ScrollAnimationWrapper = ({ children }) => {
+  const ref = useRef(null);
+  const [inViewRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.9,
   });
 
-  React.useEffect(() => {
-    if (inView) {
-      controls.start(variantKey);
+  // Assign the inViewRef to the element
+  const setRefs = (node) => {
+    ref.current = node;
+    inViewRef(node);
+  };
+
+  useEffect(() => {
+    if (inView && ref.current) {
+      console.log("Footer in view");
+      ref.current.classList.remove("hidden"); 
     }
-  }, [controls, inView, variantKey]);
+  }, [inView]);
 
   return (
-    <motion.a
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={fadeInVariants}
-      className={`social-tags ${variantKey}`}
-      href={`https://${variantKey}.com${username? `/${username}/` : ''}`}
-      target="__blank"
-    >
+    <div ref={setRefs} className="hidden links-container">
       {children}
-    </motion.a>
+    </div>
   );
 };
 
 const SocialLink = (props) => {
   return (
-    <ScrollAnimationWrapper variantKey={props.platform} username={props.username}>
+    <a
+      href={`https://${props.platform}.com${
+        props.username ? `/${props.username}/` : ""
+      }`}
+      className={`social-tags ${props.platform}`}
+      target="__blank"
+      rel="noopener noreferrer"
+    >
       {props.platform}
-    </ScrollAnimationWrapper>
+    </a>
   );
 };
 
 const SocialLinks = () => {
   return (
     <div className="social-links">
-      <div className="links-container">
+      <ScrollAnimationWrapper>
         <img
           className="wheel-black"
           src={ConsultWheelBlack}
@@ -70,14 +64,14 @@ const SocialLinks = () => {
           src={ConsultWheelWhite}
           alt="BrittoCharette"
         />
-        <SocialLink platform="linkedIn" username="in/kigo-jomo"/>
+        <SocialLink platform="linkedIn" username="in/kigo-jomo" />
         <SocialLink platform="vimeo" />
         <SocialLink platform="pinterest" username="kigojomo" />
         <SocialLink platform="twitter" />
         <SocialLink platform="facebook" />
         <SocialLink platform="instagram" username="user_6.8.4" />
         <SocialLink platform="youtube" username="@kigojomo" />
-      </div>
+      </ScrollAnimationWrapper>
     </div>
   );
 };

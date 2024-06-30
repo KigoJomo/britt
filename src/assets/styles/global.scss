@@ -641,6 +641,8 @@ html {
 
             * {
               position: absolute;
+              transition: left .5s ease-out, opacity .3s ease, bottom 1s linear, transform 1.5s ease;
+              opacity: 1;
             }
 
             .wheel-white,
@@ -730,6 +732,15 @@ html {
               bottom: 49%;
               left: 62.5%;
               transform: rotateZ(-32deg);
+            }
+          }
+
+          .hidden{
+            *{
+              left: 0% !important;
+              bottom: 120% !important;
+              transform: rotateZ(100deg) !important;
+              opacity: 0;
             }
           }
         }

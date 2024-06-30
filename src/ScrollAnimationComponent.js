@@ -6,7 +6,7 @@ const ScrollAnimationComponent = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true, // Trigger the animation only once
-    threshold: 0.3, // The amount of the element that must be visible to trigger the animation
+    threshold: 0.1, // The amount of the element that must be visible to trigger the animation
   });
 
   React.useEffect(() => {
