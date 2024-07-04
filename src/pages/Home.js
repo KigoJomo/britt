@@ -1,5 +1,5 @@
 import React from "react";
-import { RegularButton, StatsCard, IconTextButton, Image } from "./Elements";
+import { Button, StatsCard, StatsCardDark, IconTextButton, Image } from "./Elements";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -20,7 +20,7 @@ const ScrollAnimationWrapper = ({ children, variants }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.25,
   });
 
   React.useEffect(() => {
@@ -42,33 +42,84 @@ const ScrollAnimationWrapper = ({ children, variants }) => {
 }
 
 const fadeInVariants = {
-  hidden: { opacity: 0, y: 100 },
-  visible: {opacity: 1, y: 0, transition: {duration: 0.7} },
+  hidden: { opacity: 0, y: 200 },
+  visible: {opacity: 1, y: 0, transition: {duration: 1} },
 }
 
 // Hero section component
 const HeroSection = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="hero-section">
-        <div className="heading">
-          <h1>luxurious interior</h1>
-          <span>
-            <img src={bar} alt="mini-bar" />
-            <h1>and</h1>
-            <img src={bedroom} alt="bedroom" />
+      <section
+        id="hero-section"
+        className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
+      >
+        <div className="flex flex-col items-center w-full">
+          <h1 className="w-full text-center md:text-8xl">luxurious interior</h1>
+          <span className="flex items-center justify-center gap-2 w-full">
+            <img
+              src={bar}
+              alt="mini-bar"
+              className="h-10 rounded-full aspect-2 md:h-16"
+            />
+            <h1 className="md:text-8xl">and</h1>
+            <img
+              src={bedroom}
+              alt="bedroom"
+              className="h-10 rounded-full aspect-2 md:h-16"
+            />
           </span>
-          <h1>industrial design</h1>
+          <h1 className="w-full text-center md:text-8xl">industrial design</h1>
         </div>
-        <div className="hero-image">
-          <RegularButton text="best of the year" />
-          <Image image={study} />
-          <div className="founders">
-            <div className="photos">
-              <img src={user} alt="founder Brittocharette" />
-              <img src={user2} alt="principal Brittocharette" />
+
+        <div
+          id="hero-section"
+          className="w-full relative flex flex-col items-center gap-8"
+        >
+          <button className="bg-black px-4 py-2 rounded-full text-white capitalize text-center text-xs absolute z-10 -top-4 md:text-lg md:border-white md:border-8 md:-top-8">
+            Best of year
+          </button>
+          <div className="image-container w-full relative aspect-1 md:aspect-3">
+            <div className="image w-full aspect-1 md:aspect-3">
+              <img
+                src={study}
+                alt="britto study design"
+                className="hero-image-clipped md:hidden"
+              />
+              <img
+                src={study}
+                alt="britto study design"
+                className="hero-image hidden md:block"
+              />
             </div>
-            <h3>
+
+            <div className="stats md:hidden flex items-start justify-center gap-0 bg-black w-fit absolute bottom-0 rounded-2xl overflow-hidden">
+              <StatsCardDark
+                title="6K+"
+                value={
+                  <>
+                    Specializing <br /> in luxury
+                  </>
+                }
+              />
+              <StatsCardDark title="14" value={<>Progress</>} />
+              <StatsCardDark title="9" value={<>Work</>} />
+            </div>
+          </div>
+          <div className="founders flex flex-row-reverse justify-between w-full md:absolute md:flex-col md:items-end md:-bottom-16">
+            <div className="photos flex items-center gap-2">
+              <img
+                src={user}
+                alt="founder Brittocharette"
+                className="h-12 rounded-full"
+              />
+              <img
+                src={user2}
+                alt="principal Brittocharette"
+                className="h-12 rounded-full"
+              />
+            </div>
+            <h3 className="md:text-right">
               Founder and Principal
               <br />
               Brittocharette
@@ -84,15 +135,48 @@ const HeroSection = () => {
 const Stats = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="stats-section">
-        <Image image={shower} />
-        <div className="stats">
-          <StatsCard title="the 6K+" value={<>Specializing <br/> in luxury</>} />
-          <StatsCard title="14" value={<>Progress <br/> Work</>} />
-          <StatsCard title="9" value={<>Total <br/> Work</>} />
+      <section
+        id="stats-section"
+        className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
+      >
+
+        <div className="image-container w-full relative">
+          <div className="image w-full aspect-1">
+            <img src={shower} alt="brittocharette shower" className="w-full h-full" />
+          </div>
+        </div>
+
+        <div className="stats hidden md:flex ">
+          <StatsCard
+            title="the 6K+"
+            value={
+              <>
+                Specializing <br /> in luxury
+              </>
+            }
+          />
+          <StatsCard
+            title="14"
+            value={
+              <>
+                Progress <br /> Work
+              </>
+            }
+          />
+          <StatsCard
+            title="9"
+            value={
+              <>
+                Total <br /> Work
+              </>
+            }
+          />
         </div>
         <div className="license-info">
-          <p>Licensed and award-winning interior design firm specializing in luxury residential interiors.</p>
+          <p>
+            Licensed and award-winning interior design firm specializing in
+            luxury residential interiors.
+          </p>
           <IconTextButton text="read more" />
         </div>
       </section>

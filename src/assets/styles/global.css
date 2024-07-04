@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --color-text: #141414;
-  --color-background: #d4d1c9;
+  --color-background: #f7f7f7;
   --color-background-1: #ccc9a3;
-  --color-text-1: #333333;
+  --color-text-1: #494949;
   --base-font-size: clamp(12px, 1.1vw, 32px);
   --h4-font-size: calc(var(--base-font-size) * 1);
   --h3-font-size: calc(var(--h4-font-size) * 1.2);
@@ -254,11 +254,16 @@ html body #root header nav .logo::after,
 html body #root header nav .right a::after {
   display: none;
 }
+html body #root header .logo-mobile,
+html body #root header .menu-button,
+html body #root header .mobile-nav {
+  display: none;
+}
 html body #root main {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding-bottom: 10vh;
+  padding-bottom: 20vh;
 }
 html body #root main .home-button {
   margin-left: 32px;
@@ -521,7 +526,6 @@ html body #root footer .contact-banner {
 }
 html body #root footer .social-links {
   height: 300px;
-  border-top: var(--border);
   background: var(--color-background);
   align-items: center;
 }
@@ -648,4 +652,87 @@ html body #root footer .contact-banner span {
   height: 64px;
   aspect-ratio: 1;
   background: url(../images/star-white.png) center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --base-font-size: clamp(16px, 1.5vw, 48px);
+    --h4-font-size: calc(var(--base-font-size) * 1);
+    --h3-font-size: calc(var(--h4-font-size) * 1.3);
+    --h2-font-size: calc(var(--base-font-size) * 1.75);
+    --h1-font-size: calc(var(--base-font-size) * 2.175);
+  }
+  .row-flex, html body #root header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  .column-flex, html body #root header #menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  button, .btn-txt-ic p,
+  .btn-txt-ic span,
+  .button {
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-size);
+    padding: 0.5rem 0.75rem;
+  }
+  html body #root header {
+    height: 7vh;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  html body #root header nav {
+    display: none;
+  }
+  html body #root header .logo-mobile {
+    height: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  html body #root header .logo-mobile img {
+    height: 60%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+  }
+  html body #root header #menu-button {
+    background-color: transparent;
+    padding: none;
+    border: none;
+    border-radius: 0;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+    height: 50%;
+    aspect-ratio: 16/9;
+  }
+  html body #root header #menu-button span {
+    width: 100%;
+    height: 2px;
+    flex-shrink: 0;
+    display: block;
+    background-color: var(--color-text);
+  }
+  html body #root header #menu-button span:nth-of-type(2) {
+    width: 75%;
+  }
+  html body #root header .mobile-nav {
+    width: 100%;
+    height: 100%;
+  }
+  html body #root main section {
+    padding: 1rem;
+  }
+  @keyframes scroll {}
 }

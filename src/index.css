@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --golden-ratio: 1.618;
+  --base-font-size: clamp(0.8rem, 1.25vw, 1.5rem);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+img{
+  object-fit: cover;
+  object-position: center;
+}
+
+.image {
+  filter: url(#round);
+}
+
+.image img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Set font sizes for headings and paragraph based on base size and golden ratio */
+h1 {
+  font-size: calc(
+    var(--base-font-size) * var(--golden-ratio) * var(--golden-ratio)
+  ); /* H1 is two golden ratios larger than base */
+}
+
+h2 {
+  font-size: calc(
+    var(--base-font-size) * var(--golden-ratio)
+  ); /* H2 is one golden ratio larger than base */
+}
+
+h3 {
+  font-size: var(--base-font-size); /* H3 uses the base font size */
+}
+
+h4,
+p {
+  font-size: calc(
+    var(--base-font-size) / 1.2
+  ); /* Paragraph uses the base font size */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.hero-image-clipped {
+  clip-path: polygon(
+    0 0,
+    30% 0,
+    35% 7.5%,
+    65% 7.5%,
+    70% 0,
+    100% 0,
+    100% 100%,
+    68% 100%,
+    68% 72%,
+    0 72%
+  );
+}

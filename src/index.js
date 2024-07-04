@@ -6,6 +6,8 @@ import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 import NoPage from "./pages/NoPage"
+// import "./assets/styles/global.scss";
+import "./index.css"
 
 export default function App() {
     return (
