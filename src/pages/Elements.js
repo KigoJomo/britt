@@ -24,12 +24,18 @@ const IconButton = () => {
   );
 };
 
-const IconTextButton = (props) => {
+const IconTextButton = ({to, text}) => {
   return (
     <>
-      <button className="btn-txt-ic">
-        <p>{props.text}</p>
-        <span>&#x279c;</span>
+      <button className="border-0">
+        <Link to={`/${to}`} className="h-8 flex items-center">
+          <p className="text-white bg-black px-4 py-2 rounded-full capitalize text-nowrap">
+            {text}
+          </p>
+          <span className="text-white bg-black rounded-full capitalize h-full aspect-4/3 flex items-center justify-center">
+            &#x279c;
+          </span>
+        </Link>
       </button>
     </>
   );
@@ -38,11 +44,11 @@ const IconTextButton = (props) => {
 // &#x2192;
 // &rightarrow;
 
-const StatsCard = (props) => {
+const StatsCard = ({title, value, last}) => {
   return (
-    <div className="stats-card flex flex-col items-start justify-center gap-1">
-      <h2>{props.title}</h2>
-      <h4>{props.value}</h4>
+    <div className={`card flex flex-col items-start justify-end gap-6 w-1/3 pr-2 pl-8 border-r ${last && "border-r-0"}`}>
+      <h2 className="text-6xl font-bold">{title}</h2>
+      <h3 className="font-bold">{value}</h3>
     </div>
   )
 };

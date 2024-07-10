@@ -63,7 +63,7 @@ const Layout = () => {
 
   return (
     <>
-      <header className="bg-white flex items-center h-16 z-20 w-screen overflow-y-visible relative">
+      <header className="bg-white flex items-center h-16 z-20 w-screen overflow-y-visible sticky top-0">
         <nav className="container mx-auto justify-between items-center p-4 hidden lg:flex">
           <div className="flex space-x-4 w-1/5">
             <Link
@@ -119,7 +119,7 @@ const Layout = () => {
         </div>
       </header>
 
-      <main className="bg-white flex flex-col gap-14">
+      <main className="w-full h-fit min-h-full bg-white flex flex-col gap-14">
         {location.pathname !== "/" && (
           <Link className="home-button" to="/">
             &#x276C; home

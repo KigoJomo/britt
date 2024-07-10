@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StatsCard, StatsCardDark, IconTextButton, Image } from "./Elements";
+import { StatsCard, StatsCardDark, IconTextButton, Image } from "./Elements";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -137,16 +137,16 @@ const Stats = () => {
     <ScrollAnimationWrapper variants={fadeInVariants}>
       <section
         id="stats-section"
-        className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
+        className="flex flex-col items-center justify-between gap-6 w-full px-4 md:px-10 md:py-4 md:flex-row md:items-end"
       >
 
-        <div className="image-container w-full relative">
-          <div className="image w-full aspect-1">
+        <div className="image-container w-full md:w-1/5 relative">
+          <div className="image w-full aspect-1 rounded-3xl overflow-hidden" style={{filter: "none"}}>
             <img src={shower} alt="brittocharette shower" className="w-full h-full" />
           </div>
         </div>
 
-        <div className="stats hidden md:flex ">
+        <div className="stats hidden md:flex w-1/2">
           <StatsCard
             title="the 6K+"
             value={
@@ -164,6 +164,7 @@ const Stats = () => {
             }
           />
           <StatsCard
+            last
             title="9"
             value={
               <>
@@ -172,12 +173,14 @@ const Stats = () => {
             }
           />
         </div>
-        <div className="license-info">
-          <p>
-            Licensed and award-winning interior design firm specializing in
-            luxury residential interiors.
-          </p>
-          <IconTextButton text="read more" />
+        <div className="license-info flex flex-col items-end md:gap-5 md:w-1/4">
+          <div className="info w-full flex md:justify-end">
+            <p className="w-2/3 md:w-full md:text-right">
+              Licensed and award-winning interior design firm specializing in
+              luxury residential interiors.
+            </p>
+          </div>
+          <IconTextButton to="about" text="read more" />
         </div>
       </section>
     </ScrollAnimationWrapper>
