@@ -29,7 +29,7 @@ const IconTextButton = ({to, text}) => {
     <>
       <button className="border-0">
         <Link to={`/${to}`} className="h-8 flex items-center">
-          <p className="text-white bg-black px-4 py-2 rounded-full capitalize text-nowrap">
+          <p className="text-white bg-black px-4 py-2 rounded-full capitalize text-nowrap max-h-full flex items-center">
             {text}
           </p>
           <span className="text-white bg-black rounded-full capitalize h-full aspect-4/3 flex items-center justify-center">

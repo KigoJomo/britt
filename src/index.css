@@ -21,12 +21,16 @@ html {
   overflow-x: hidden;
 }
 
-#root{
+#root {
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-img{
+#root::-webkit-scrollbar{
+  display: none;
+}
+
+img {
   object-fit: cover;
   object-position: center;
 }
@@ -61,9 +65,7 @@ h3 {
 
 h4,
 p {
-  font-size: calc(
-    var(--base-font-size) / 1.2
-  );
+  font-size: calc(var(--base-font-size) / 1.2);
 }
 
 h1,
@@ -74,7 +76,7 @@ h4 {
   font-weight: 600;
 }
 
-p{
+p {
   font-weight: 500;
 }
 
@@ -90,5 +92,40 @@ p{
     68% 100%,
     68% 72%,
     0 72%
+  );
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slider {
+  animation: scroll 20s linear infinite;
+}
+
+.slider:hover {
+  animation-play-state: paused;
+}
+
+.showroom-image-clipped {
+  clip-path: polygon(100% 0, 100% 100%, 52% 100%, 52% 50%, 50% 48%, 0 48%, 0 0);
+}
+.showroom-image-clipped-md {
+  clip-path: polygon(
+    80% 0,
+    80% 3%,
+    80% 7%,
+    81% 13%,
+    84% 17%,
+    92% 20%,
+    100% 20%,
+    100% 100%,
+    0 100%,
+    0 0
   );
 }

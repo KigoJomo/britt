@@ -9,6 +9,7 @@ module.exports = {
       aspectRatio: {
         "21/9": "21 / 9",
         "4/3": "4 / 3",
+        "9/16": "9/16",
       },
     },
     colors: {

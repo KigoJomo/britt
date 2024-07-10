@@ -20,7 +20,7 @@ const ScrollAnimationWrapper = ({ children, variants }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.25,
+    threshold: 0.1,
   });
 
   React.useEffect(() => {
@@ -38,13 +38,13 @@ const ScrollAnimationWrapper = ({ children, variants }) => {
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
 
 const fadeInVariants = {
   hidden: { opacity: 0, y: 200 },
-  visible: {opacity: 1, y: 0, transition: {duration: 1} },
-}
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
 
 // Hero section component
 const HeroSection = () => {
@@ -93,7 +93,7 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className="stats md:hidden flex items-start justify-center gap-0 bg-black w-fit absolute bottom-0 rounded-2xl overflow-hidden">
+            <div className="stats md:hidden flex items-center justify-around bg-black w-2/3 absolute rounded-2xl overflow-hidden" style={{top: "74%", height: "26%"}}>
               <StatsCardDark
                 title="6K+"
                 value={
@@ -139,10 +139,16 @@ const Stats = () => {
         id="stats-section"
         className="flex flex-col items-center justify-between gap-6 w-full px-4 md:px-10 md:py-4 md:flex-row md:items-end"
       >
-
         <div className="image-container w-full md:w-1/5 relative">
-          <div className="image w-full aspect-1 rounded-3xl overflow-hidden" style={{filter: "none"}}>
-            <img src={shower} alt="brittocharette shower" className="w-full h-full" />
+          <div
+            className="image w-full aspect-1 rounded-3xl overflow-hidden"
+            style={{ filter: "none" }}
+          >
+            <img
+              src={shower}
+              alt="brittocharette shower"
+              className="w-full h-full"
+            />
           </div>
         </div>
 
@@ -185,39 +191,70 @@ const Stats = () => {
       </section>
     </ScrollAnimationWrapper>
   );
-}
+};
 
 const SliderContent = () => {
   return (
     <>
-      <img src={star} alt="star" />
-      <h2>/</h2>
-      <h2>Brittocharette luxurious interior</h2>
-      <img src={star} alt="star" />
-      <h2>/</h2>
-      <h2>miami-based interior design</h2>
+      <img src={star} alt="star" className="h-9" />
+      <h2 className="flex-shrink-0 uppercase">/</h2>
+      <h2 className="flex-shrink-0 uppercase">
+        Brittocharette luxurious interior
+      </h2>
+      <img src={star} alt="star" className="h-9" />
+      <h2 className="flex-shrink-0 uppercase">/</h2>
+      <h2 className="flex-shrink-0 uppercase">miami-based interior design</h2>
     </>
   );
-}
+};
 
 // Showroom section component
 const Showroom = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="showroom">
-        <div className="left">
-          <h2>
+      <section
+        id="showroom"
+        className="px-4 pb-20 md:px-10 relative flex flex-col-reverse items-end md:items-center justify-center md:flex-row gap-4 md:gap-12"
+      >
+        <div className="info w-1/2 flex flex-col gap-2 items-end md:items-start md:w-1/3 md:gap-8">
+          <h2 className="text-right md:text-left md:text-6xl font-bold">
             visit our <br />
             showroom{" "}
           </h2>
-          <p>
-            From our studio in Miami's world-renowned Wynwood neighborhood, founders Joy Britto and David Charette create custom furniture.
+          <p className="text-right md:text-left">
+            From our studio in Miami's world-renowned Wynwood neighborhood,
+            founders Joy Britto and David Charette create custom furniture.
           </p>
-          <IconTextButton text="about us" />
+          <div className="hidden md:flex">
+            <IconTextButton to="about" text="about us" />
+          </div>
         </div>
-        <Image image={wardrobe}/>
-        <div className="slider-wrapper">
-          <div className="slider">
+        <div className="image-container w-full md:w-2/5 relative">
+          <div className="image w-full aspect-1 rounded-3xl overflow-hidden">
+            <img
+              src={wardrobe}
+              alt="brittocharette wardrobe"
+              className="w-full h-full showroom-image-clipped md:hidden"
+            />
+            <img
+              src={wardrobe}
+              alt="brittocharette wardrobe"
+              className="w-full h-full showroom-image-clipped-md hidden md:block"
+            />
+          </div>
+          <div className="image-container absolute top-1/2 w-1/2 md:hidden flex flex-col gap-3">
+            <div className="image w-full aspect-9/16">
+              <img
+                src={bar}
+                alt="brittocharette bar"
+                className="w-full h-full"
+              />
+            </div>
+            <IconTextButton to="about" text="about us" />
+          </div>
+        </div>
+        <div className="slider-wrapper absolute bottom-0 left-0 w-full overflow-hidden bg-slate">
+          <div className="slider flex items-center gap-8">
             <SliderContent />
             <SliderContent />
             <SliderContent />
@@ -227,7 +264,7 @@ const Showroom = () => {
       </section>
     </ScrollAnimationWrapper>
   );
-}
+};
 
 // Showcase component
 const Showcase = () => {
@@ -252,17 +289,19 @@ const Showcase = () => {
         </div>
         <div className="sub">
           <Image image={bathtub} button />
-          <h3>Boca Modern <br/> Sofa Brittocharette</h3>
+          <h3>
+            Boca Modern <br /> Sofa Brittocharette
+          </h3>
           <p>
-            Discover our portfolio and reach out with any questions. We're here to bring your design aspirations to life.
+            Discover our portfolio and reach out with any questions. We're here
+            to bring your design aspirations to life.
           </p>
           <IconTextButton text="show more" />
         </div>
       </section>
     </ScrollAnimationWrapper>
   );
-}
-
+};
 
 // Home component
 const Home = () => {
