@@ -93,9 +93,10 @@ const Layout = () => {
           <MenuButton open={!menuOpen} onClick={toggleMenu} />
 
           <nav
-            className={`absolute top-full left-0 w-full h-screen bg-white ${
+            className={`absolute left-0 w-full h-screen bg-white ${
               menuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+              }`}
+            style={{top: "98%"}}
           >
             <ul className="flex flex-col items-center justify-start gap-4 w-full h-full px-12 py-4">
               <NavigationLink label="Home" to="/" onClick={closeMenu} />

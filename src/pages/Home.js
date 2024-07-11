@@ -1,5 +1,5 @@
 import React from "react";
-import { StatsCard, StatsCardDark, IconTextButton, Image } from "./Elements";
+import { StatsCard, StatsCardDark, IconTextButton, Image, IconButton } from "./Elements";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -270,25 +270,51 @@ const Showroom = () => {
 const Showcase = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="showcase">
-        <div className="centerpiece">
-          <div className="title">
-            <p>ritz-carlton ph</p>
-            <h3>modern villa</h3>
-            <p>portofino tower</p>
+      <section id="showcase" className="px-4 flex md:flex-row flex-col gap-8">
+        <div className="centerpiece flex flex-col-reverse md:flex-col gap-4">
+          <div className="title flex flex-col gap-1">
+            <p className="uppercase">ritz-carlton ph</p>
+            <div className="flex md:flex-col items-end md:items-start gap-2 md:gap-1">
+              <h3 className="uppercase font-bold">modern villa</h3>
+              <p className="uppercase">portofino tower</p>
+            </div>
           </div>
-          <Image
-            heading={
-              <>
-                Britto living <br /> room
-              </>
-            }
-            image={livingRoom}
-            button
-          />
+
+          <div className="image-container w-full relative">
+            <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4">
+              Britto living <br /> room
+            </h2>
+            <div className="image w-full aspect-4/3">
+              <img
+                src={livingRoom}
+                alt="brittocharette livingRoom"
+                className="w-full h-full centerpiece-image"
+              />
+            </div>
+            <div className="hidden md:block">
+              <IconButton />
+            </div>
+          </div>
         </div>
-        <div className="sub">
-          <Image image={bathtub} button />
+
+        <div className="sub flex flex-col gap-4">
+          <div className="image-container w-full relative">
+            <div className="image w-full aspect-4/3">
+              <img
+                src={bathtub}
+                alt="brittocharette bathtub"
+                className="w-full h-full"
+              />
+            </div>
+
+            <h3 className="md:hidden absolute">
+              Boca Modern <br /> Sofa Brittocharette
+            </h3>
+
+            <div className="hidden md:block">
+              <IconButton />
+            </div>
+          </div>
           <h3>
             Boca Modern <br /> Sofa Brittocharette
           </h3>
