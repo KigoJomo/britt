@@ -270,7 +270,7 @@ const Showroom = () => {
 const Showcase = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="showcase" className="px-4 flex md:flex-row flex-col gap-8">
+      <section id="showcase" className="px-4 flex md:flex-row flex-col gap-8 pb-16">
         <div className="centerpiece flex flex-col-reverse md:flex-col gap-4">
           <div className="title flex flex-col gap-1">
             <p className="uppercase">ritz-carlton ph</p>
@@ -281,33 +281,49 @@ const Showcase = () => {
           </div>
 
           <div className="image-container w-full relative">
-            <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4">
+            <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4 md:w-1/3 md:h-1/5">
               Britto living <br /> room
             </h2>
             <div className="image w-full aspect-4/3">
               <img
                 src={livingRoom}
                 alt="brittocharette livingRoom"
-                className="w-full h-full centerpiece-image"
+                className="w-full h-full centerpiece-image md:hidden"
+              />
+              <img
+                src={livingRoom}
+                alt="brittocharette livingRoom"
+                className="w-full h-full centerpiece-image-md hidden md:block"
               />
             </div>
-            <div className="hidden md:block">
+            <div
+              className="hidden md:block absolute"
+              style={{ top: "85%", right: "0" }}
+            >
               <IconButton />
             </div>
           </div>
         </div>
 
-        <div className="sub flex flex-col gap-4">
+        <div className="sub flex flex-col gap-8 items-center">
           <div className="image-container w-full relative">
             <div className="image w-full aspect-4/3">
               <img
                 src={bathtub}
                 alt="brittocharette bathtub"
-                className="w-full h-full"
+                className="w-full h-full sub-image-clipped md:hidden"
+              />
+              <img
+                src={bathtub}
+                alt="brittocharette bathtub"
+                className="w-full h-full sub-image-clipped-md hidden md:blocked"
               />
             </div>
 
-            <h3 className="md:hidden absolute">
+            <h3
+              className="text-lg md:hidden absolute"
+              style={{ bottom: "0%", maxHeight: "20%", lineHeight: "120%" }}
+            >
               Boca Modern <br /> Sofa Brittocharette
             </h3>
 
@@ -315,10 +331,10 @@ const Showcase = () => {
               <IconButton />
             </div>
           </div>
-          <h3>
+          <h3 className="text-lg hidden md:block">
             Boca Modern <br /> Sofa Brittocharette
           </h3>
-          <p>
+          <p className="text-center md:text-left">
             Discover our portfolio and reach out with any questions. We're here
             to bring your design aspirations to life.
           </p>

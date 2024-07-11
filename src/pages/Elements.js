@@ -19,7 +19,7 @@ const Button = ({ label, to }) => {
 const IconButton = () => {
   return (
     <>
-      <button className="btn-ic bg-black text-white flex items-center justify-center rounded-full w-12 text-3xl aspect-1">&#x2197;</button>
+      <button className="btn-ic bg-black text-white flex items-center justify-center rounded-full w-16 text-3xl aspect-1">&#x2197;</button>
     </>
   );
 };
