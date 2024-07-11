@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import ConsultWheelBlack from "../assets/images/consult-wheel-black.webp";
 import ConsultWheelWhite from "../assets/images/consult-wheel-white.webp";
 import star from "../assets/images/star-white.png";
+import { Link } from "react-router-dom";
 
 const ScrollAnimationWrapper = ({ children }) => {
   const ref = useRef(null);
@@ -120,12 +121,31 @@ const ContactBanner = () => {
   );
 };
 
+const Credits = () => {
+  return (
+    <div className="w-full flex items-center justify-center gap-2 p-4 pt-8 relative text-white">
+      <div className="absolute w-1/2 border border-white top-0"></div>
+      <p className="text-base font-light text-slate">©Built by</p>
+      <Link
+        target="__blank"
+        rel="noopener noreferrer"
+        to="https://github.com/KigoJomo/"
+        className="font-medium"
+        style={{ textDecoration: "underline" }}
+      >
+        KigoJomo
+      </Link>
+    </div>
+  );
+}
+
 const Footer = () => {
   return (
     <footer className="w-full flex flex-col bg-gray relative">
       <SocialLinks />
       <Info />
       <ContactBanner />
+      <Credits />
     </footer>
   );
 };
