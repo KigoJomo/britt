@@ -1,14 +1,20 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ConsultWheelBlack from "../assets/images/consult-wheel-black.webp";
 import ConsultWheelWhite from "../assets/images/consult-wheel-white.webp";
+import star from "../assets/images/star-white.png";
 
 const ScrollAnimationWrapper = ({ children }) => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Assuming md is 768px
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.9,
   });
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
 
   // Assign the inViewRef to the element
   const setRefs = (node) => {
@@ -17,14 +23,26 @@ const ScrollAnimationWrapper = ({ children }) => {
   };
 
   useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     if (inView && ref.current) {
       console.log("Footer in view");
-      ref.current.classList.remove("hidden"); 
+      ref.current.classList.remove("Hidden");
     }
   }, [inView]);
 
   return (
-    <div ref={setRefs} className="hidden links-container">
+    <div
+      ref={setRefs}
+      className={`Hidden ${
+        isMobile ? "links-container" : "links-container-md"
+      } w-5/6 relative`}
+    >
       {children}
     </div>
   );
@@ -36,7 +54,7 @@ const SocialLink = (props) => {
       href={`https://${props.platform}.com${
         props.username ? `/${props.username}/` : ""
       }`}
-      className={`social-tags ${props.platform}`}
+      className={`social-tags ${props.platform} py-1 px-4 md:w-1/5 md:px-8 md:py-2`}
       target="__blank"
       rel="noopener noreferrer"
     >
@@ -47,20 +65,20 @@ const SocialLink = (props) => {
 
 const SocialLinks = () => {
   return (
-    <div className="social-links">
+    <div className="social-links bg-white flex flex-col items-center" style={{height: "300px"}}>
       <ScrollAnimationWrapper>
         <img
-          className="wheel-black"
+          className="wheel-black md:h-4/5 h-1/3"
           src={ConsultWheelBlack}
           alt="BrittoCharette"
         />
         <img
-          className="wheel-black-2"
+          className="wheel-black-2 md:h-4/5 h-1/3"
           src={ConsultWheelBlack}
           alt="BrittoCharette"
         />
         <img
-          className="wheel-white"
+          className="wheel-white md:h-1/2 h-1/3"
           src={ConsultWheelWhite}
           alt="BrittoCharette"
         />
@@ -69,7 +87,7 @@ const SocialLinks = () => {
         <SocialLink platform="pinterest" username="kigojomo" />
         <SocialLink platform="twitter" />
         <SocialLink platform="facebook" />
-        <SocialLink platform="instagram" username="user_6.8.4" />
+        <SocialLink platform="instagram" username="kigo.jomo" />
         <SocialLink platform="youtube" username="@kigojomo" />
       </ScrollAnimationWrapper>
     </div>
@@ -78,11 +96,15 @@ const SocialLinks = () => {
 
 const Info = () => {
   return (
-    <div className="info">
-      <p>We invite you to connect to our team for more information.</p>
-      <p>Let's Stay Connected</p>
-      <p>
-        © 2010 All Rights <br /> Reserved
+    <div className="info max-w-full w-full py-8 px-4 md:px-20 text-white flex md:flex-nowrap flex-wrap justify-between gap-y-10">
+      <p className="w-1/2 flex-shrink-0 md:w-1/5">
+        We invite you to connect to our team for more information.
+      </p>
+      <p className="w-1/2 flex-shrink-0 md:text-center text-right md:w-1/5">
+        Let's Stay Connected
+      </p>
+      <p className="md:text-right text-center w-full flex-shrink-0 md:w-1/5">
+        © 2010 All Rights <br className="hidden md:block" /> Reserved
       </p>
     </div>
   );
@@ -90,17 +112,17 @@ const Info = () => {
 
 const ContactBanner = () => {
   return (
-    <div className="contact-banner">
-      <h1>contact</h1>
-      <span></span>
-      <h1>us</h1>
+    <div className="contact-banner pb-4 md:py-8 px-2 flex justify-center items-center">
+      <h1 className="text-white text-4xl md:text-9xl uppercase tracking-wider">contact</h1>
+      <img src={star} alt="brittocharette" className="h-8 md:h-16" />
+      <h1 className="text-white text-4xl md:text-9xl  uppercase tracking-wider">us</h1>
     </div>
   );
 };
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="w-full flex flex-col bg-gray relative">
       <SocialLinks />
       <Info />
       <ContactBanner />

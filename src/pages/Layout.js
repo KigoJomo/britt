@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
 import { Button } from "./Elements";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 import logo from "../assets/images/britt-logo.webp";
 
@@ -120,7 +120,7 @@ const Layout = () => {
         </div>
       </header>
 
-      <main className="w-full h-fit min-h-full bg-white flex flex-col gap-14">
+      <main className="w-full bg-white flex flex-col gap-24 flex-1">
         {location.pathname !== "/" && (
           <Link className="home-button" to="/">
             &#x276C; home
@@ -129,7 +129,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

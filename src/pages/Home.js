@@ -1,5 +1,5 @@
 import React from "react";
-import { StatsCard, StatsCardDark, IconTextButton, Image, IconButton } from "./Elements";
+import { StatsCard, StatsCardDark, IconTextButton, IconButton } from "./Elements";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -270,8 +270,11 @@ const Showroom = () => {
 const Showcase = () => {
   return (
     <ScrollAnimationWrapper variants={fadeInVariants}>
-      <section id="showcase" className="px-4 flex md:flex-row flex-col gap-8 pb-16">
-        <div className="centerpiece flex flex-col-reverse md:flex-col gap-4">
+      <section
+        id="showcase"
+        className="px-4 md:px-16 flex md:flex-row md:justify-center items-end flex-col gap-8 md:gap-32 pb-16"
+      >
+        <div className="centerpiece flex flex-col-reverse md:flex-col gap-4 md:gap-12 md:w-1/2">
           <div className="title flex flex-col gap-1">
             <p className="uppercase">ritz-carlton ph</p>
             <div className="flex md:flex-col items-end md:items-start gap-2 md:gap-1">
@@ -281,7 +284,7 @@ const Showcase = () => {
           </div>
 
           <div className="image-container w-full relative">
-            <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4 md:w-1/3 md:h-1/5">
+            <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4 md:h-1/5">
               Britto living <br /> room
             </h2>
             <div className="image w-full aspect-4/3">
@@ -298,40 +301,43 @@ const Showcase = () => {
             </div>
             <div
               className="hidden md:block absolute"
-              style={{ top: "85%", right: "0" }}
+              style={{ top: "85%", left: "89%", width: "10%" }}
             >
-              <IconButton />
+              <IconButton width="100%" />
             </div>
           </div>
         </div>
 
-        <div className="sub flex flex-col gap-8 items-center">
-          <div className="image-container w-full relative">
-            <div className="image w-full aspect-4/3">
+        <div className="sub flex flex-col gap-8 md:gap-4 items-center md:items-start md:w-1/3">
+          <div className="image-container w-full relative flex flex-col items-center">
+            <div className="image w-full aspect-4/3 md:aspect-1/1">
               <img
                 src={bathtub}
                 alt="brittocharette bathtub"
-                className="w-full h-full sub-image-clipped md:hidden"
+                className="w-full aspect-4/3 sub-image-clipped md:hidden"
               />
               <img
                 src={bathtub}
                 alt="brittocharette bathtub"
-                className="w-full h-full sub-image-clipped-md hidden md:blocked"
+                className="w-full aspect-1 sub-image-clipped-md hidden md:block"
               />
             </div>
 
             <h3
-              className="text-lg md:hidden absolute"
+              className="text-lg md:hidden absolute left-0"
               style={{ bottom: "0%", maxHeight: "20%", lineHeight: "120%" }}
             >
               Boca Modern <br /> Sofa Brittocharette
             </h3>
 
-            <div className="hidden md:block">
-              <IconButton />
+            <div
+              className="hidden md:block absolute"
+              style={{ top: "85%", left: "89%", height: "13%", aspectRatio: "1/1" }}
+            >
+              <IconButton width="100%" />
             </div>
           </div>
-          <h3 className="text-lg hidden md:block">
+          <h3 className="hidden md:block font-bold">
             Boca Modern <br /> Sofa Brittocharette
           </h3>
           <p className="text-center md:text-left">
