@@ -58,6 +58,7 @@ img {
   object-position: center;
 }
 
+
 /* Set font sizes for headings and paragraph based on base size and golden ratio */
 h1 {
   font-size: calc(
@@ -356,4 +357,8 @@ p {
   bottom: 120% !important;
   transform: rotateZ(100deg) !important;
   opacity: 0;
+}
+
+.philosophy-image-clipped{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 0% 100%);
 }

@@ -1,7 +1,7 @@
 // Layout .js
 
 import { useState } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 import { Button } from "./Elements";
 import Footer from "./Footer";
@@ -56,7 +56,6 @@ const NavigationLink = ({ label, to, onClick}) => {
 
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
@@ -121,11 +120,6 @@ const Layout = () => {
       </header>
 
       <main className="w-full bg-white flex flex-col gap-24 flex-1">
-        {location.pathname !== "/" && (
-          <Link className="home-button" to="/">
-            &#x276C; home
-          </Link>
-        )}
         <Outlet />
       </main>
 
