@@ -29,6 +29,7 @@ const About = () => {
               <p className="md:text-left text-right">
                 Luxurious Interior and
                 <br className="md:hidden" />
+                <p> </p>
                 Industrial Design
               </p>
               <div className="hidden md:block">
@@ -52,7 +53,7 @@ const About = () => {
 
               <div
                 className="image absolute aspect-1 md:hidden max-h-48"
-                style={{ top: "77%", left: "52%", width: '48%' }}
+                style={{ top: "77%", left: "52%", width: "48%" }}
               >
                 <img
                   src={diningSetup}
@@ -62,9 +63,9 @@ const About = () => {
               </div>
             </div>
 
-              <div className="md:hidden w-1/2 mt-6">
-                <Elegance />
-              </div>
+            <div className="md:hidden w-1/2 mt-6">
+              <Elegance />
+            </div>
 
             <div className="w-full md:w-1/3 md:h-full flex flex-col md:justify-between gap-2 items-center md:items-start pt-8 md:pt-0">
               <div className="image-container w-full hidden md:flex">
