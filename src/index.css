@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+
 :root {
   --golden-ratio: 1.618;
   --base-font-size: clamp(0.8rem, 1.25vw, 1.5rem);
@@ -58,12 +62,13 @@ img {
   object-position: center;
 }
 
-
 /* Set font sizes for headings and paragraph based on base size and golden ratio */
 h1 {
   font-size: calc(
     var(--base-font-size) * var(--golden-ratio) * var(--golden-ratio)
-  ); /* H1 is two golden ratios larger than base */
+  );
+  /* font-family: "Syncopate", sans-serif; */
+  font-family: "Krona One", sans-serif;
 }
 
 h2 {
@@ -184,14 +189,7 @@ p {
 }
 
 .sub-image-clipped-md {
-  clip-path: polygon(
-    100% 0,
-    100% 84%,
-    88% 84%,
-    88% 100%,
-    0 100%,
-    0 0
-  );
+  clip-path: polygon(100% 0, 100% 84%, 88% 84%, 88% 100%, 0 100%, 0 0);
 }
 
 .social-links .links-container,
@@ -204,7 +202,8 @@ p {
 .links-container *,
 .links-container-md * {
   position: absolute;
-  transition: left 0.5s ease-out, opacity 0.3s ease, bottom 1s linear, transform 1.5s ease;
+  transition: left 0.5s ease-out, opacity 0.3s ease, bottom 1s linear,
+    transform 1.5s ease;
   opacity: 1;
 }
 
@@ -308,7 +307,6 @@ p {
   transform: rotateZ(-35deg);
 }
 
-
 /* Specific values for .links-container-md */
 
 .links-container-md .vimeo {
@@ -359,6 +357,55 @@ p {
   opacity: 0;
 }
 
-.philosophy-image-clipped{
+.philosophy-image-clipped {
+  /* img */
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 50% 100%, 0% 100%);
+}
+
+.clip-container {
+  filter: url(#round);
+}
+
+@media (min-width: 768px) {
+  .principals-clipped {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      68% 100%,
+      68% 27%,
+      62% 27%,
+      62% 15%,
+      38% 15%,
+      38% 27%,
+      32% 27%,
+      32% 100%,
+      0% 100%
+    );
+  }
+}
+
+.tripple-clip {
+  clip-path: polygon(
+    2.33% 0%,
+    46.5% 0%,
+    50% 50%,
+    53.5% 0%,
+    80.5% 0%,
+    84.39% 50%,
+    88.28% 0%,
+    98% 0%,
+    100% 11%,
+    100% 84%,
+    99.17% 100%,
+    88.28% 100%,
+    84.39% 50%,
+    80.5% 100%,
+    53.5% 100%,
+    50% 50%,
+    46.5% 100%,
+    2% 100%,
+    0% 91%,
+    0% 15%
+  );
 }

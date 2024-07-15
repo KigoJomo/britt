@@ -55,21 +55,25 @@ const HeroSection = () => {
         className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
       >
         <div className="flex flex-col items-center w-full">
-          <h1 className="w-full text-center md:text-8xl">luxurious interior</h1>
+          <h1 className="w-full text-center md:text-8xl font-normal">
+            luxurious interior
+          </h1>
           <span className="flex items-center justify-center gap-2 w-full">
             <img
               src={bar}
               alt="mini-bar"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
-            <h1 className="md:text-8xl">and</h1>
+            <h1 className="md:text-8xl font-normal">and</h1>
             <img
               src={bedroom}
               alt="bedroom"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
           </span>
-          <h1 className="w-full text-center md:text-8xl">industrial design</h1>
+          <h1 className="w-full text-center md:text-8xl font-normal">
+            industrial design
+          </h1>
         </div>
 
         <div
@@ -93,7 +97,10 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className="stats md:hidden flex items-center justify-around bg-black w-2/3 absolute rounded-2xl overflow-hidden" style={{top: "74%", height: "26%"}}>
+            <div
+              className="stats md:hidden flex items-center justify-around bg-black w-2/3 absolute rounded-2xl overflow-hidden"
+              style={{ top: "74%", height: "26%" }}
+            >
               <StatsCardDark
                 title="6K+"
                 value={
@@ -111,12 +118,12 @@ const HeroSection = () => {
               <img
                 src={user}
                 alt="founder Brittocharette"
-                className="h-12 rounded-full"
+                className="h-12 rounded-full bg-white"
               />
               <img
                 src={user2}
                 alt="principal Brittocharette"
-                className="h-12 rounded-full"
+                className="h-12 rounded-full bg-white"
               />
             </div>
             <h3 className="md:text-right">
@@ -344,7 +351,7 @@ const Showcase = () => {
             Discover our portfolio and reach out with any questions. We're here
             to bring your design aspirations to life.
           </p>
-          <IconTextButton text="show more" />
+          <IconTextButton text="show more" to="projects" />
         </div>
       </section>
     </ScrollAnimationWrapper>

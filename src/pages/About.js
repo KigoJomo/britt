@@ -1,6 +1,10 @@
+// src/pages/About.js
+
 import React from "react";
 import dining from "../assets/images/dining.webp";
 import diningSetup from "../assets/images/dining-setup.webp";
+import user from "../assets/images/user.webp";
+import user2 from "../assets/images/user2.webp";
 import { ScrollAnimationWrapper, fadeInVariants } from "./Home";
 
 const Elegance = () => {
@@ -16,8 +20,8 @@ const About = () => {
   return (
     <>
       <ScrollAnimationWrapper variants={fadeInVariants}>
-        <section className="px-4 py-4 md:px-10 flex flex-col gap-6 pb-16">
-          <h1 className="hidden md:block uppercase font-bold text-9xl">
+        <section className="px-4 pt-4 md:px-10 flex flex-col gap-6">
+          <h1 className="hidden md:block uppercase font-normal text-9xl">
             about
           </h1>
           <div className="w-full flex flex-col md:flex-row gap-2 md:gap-8 md:aspect-4">
@@ -90,7 +94,49 @@ const About = () => {
       </ScrollAnimationWrapper>
 
       <ScrollAnimationWrapper variants={fadeInVariants}>
-        <section></section>
+        <section className="w-full px-4 py-0 md:px-14 flex flex-col items-center gap-4 relative md:bg-white">
+          <div className="desc flex flex-col gap-6 items-center md:absolute z-10 md:w-1/3 md:py-2 md:px-6 md:aspect-4/3 md:justify-between" style={{top: '15%'}}>
+            <h1 className="hidden md:block font-bold text-4xl md:uppercase text-center tracking-wider leading-normal">
+              meet the
+              <br/>
+              Principals
+            </h1>
+
+            <h2 className="font-bold md:hidden">meet principals</h2>
+
+            <div className="image hidden md:flex w-full aspect-6 items-center gap-0 rounded-3xl overflow-hidden">
+              <img
+                src={diningSetup}
+                alt="Brittocharette dining room"
+                className="aspect-6 tripple-clip"
+              />
+            </div>
+
+            <p className="text-center">
+              As principal and licensed designer, the founder oversees the
+              day-to-day operations of Britto Charette and the design and
+              manufacture of our firm's custom furniture and award-winning
+              accessories.
+            </p>
+          </div>
+
+          <div className="w-full aspect-3 flex flex-col clip-container">
+            <div className="w-full h-full flex items-center justify-between md:bg-slate principals-clipped">
+              <img
+                src={user}
+                alt="Principal Brittocharette"
+                className="w-2/5 md:w-1/3 aspect-1 bg-slate md:bg-transparent rounded-xl"
+              />
+
+              <img
+                src={user2}
+                alt="Principal Brittocharette"
+                className="w-2/5 md:w-1/3 aspect-1 bg-slate md:bg-transparent rounded-xl"
+              />
+
+            </div>
+          </div>
+        </section>
       </ScrollAnimationWrapper>
     </>
   );

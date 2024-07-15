@@ -19,7 +19,7 @@
     <link rel="icon" href="%PUBLIC_URL%/britt-icon.ico" />
   </head>
   <body class="overflow-hidden flex flex-col">
-    <div id="root" class="w-full h-full flex flex-col flex-grow relative"></div>
+    <div id="root" class="w-full h-full flex flex-col flex-grow relative bg-white"></div>
 
     <svg
       style="visibility: hidden; position: absolute"
@@ -30,7 +30,7 @@
     >
       <defs>
         <filter id="round">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
           <feColorMatrix
             in="blur"
             mode="matrix"

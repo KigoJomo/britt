@@ -141,7 +141,7 @@ const Credits = () => {
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col bg-gray relative">
+    <footer className="w-full flex flex-col bg-gray relative mt-16">
       <SocialLinks />
       <Info />
       <ContactBanner />
