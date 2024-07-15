@@ -1,7 +1,9 @@
 import React from "react";
 import { StatsCard, StatsCardDark, IconTextButton, IconButton } from "./Elements";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import {
+  ScrollAnimationWrapper,
+  fadeInVariants,
+} from "../components/ScrollAnimationWrapper";
 
 // Import images
 import bedroom from "../assets/images/bedroom.webp";
@@ -15,36 +17,6 @@ import user from "../assets/images/user.webp";
 import user2 from "../assets/images/user2.webp";
 import star from "../assets/images/star.webp";
 
-// A higher order component that will wrap sections and apply the scroll animations
-const ScrollAnimationWrapper = ({ children, variants }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={variants}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-const fadeInVariants = {
-  hidden: { opacity: 0, y: 200 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-};
 
 // Hero section component
 const HeroSection = () => {
@@ -84,7 +56,7 @@ const HeroSection = () => {
             Best of year
           </button>
           <div className="image-container w-full relative aspect-1 md:aspect-3">
-            <div className="image w-full aspect-1 md:aspect-3">
+            <div className="image w-full aspect-1 md:aspect-3 hover-effect-cont">
               <img
                 src={study}
                 alt="britto study design"
@@ -148,7 +120,7 @@ const Stats = () => {
       >
         <div className="image-container w-full md:w-1/5 relative">
           <div
-            className="image w-full aspect-1 rounded-3xl overflow-hidden"
+            className="image w-full aspect-1 rounded-3xl overflow-hidden hover-effect-cont"
             style={{ filter: "none" }}
           >
             <img
@@ -237,7 +209,7 @@ const Showroom = () => {
           </div>
         </div>
         <div className="image-container w-full md:w-2/5 relative">
-          <div className="image w-full aspect-1 rounded-3xl overflow-hidden">
+          <div className="image w-full aspect-1 rounded-3xl overflow-hidden hover-effect-cont">
             <img
               src={wardrobe}
               alt="brittocharette wardrobe"
@@ -294,7 +266,7 @@ const Showcase = () => {
             <h2 className="uppercase text-right absolute z-10 right-0 w-1/2 h-1/4 md:h-1/5">
               Britto living <br /> room
             </h2>
-            <div className="image w-full aspect-4/3">
+            <div className="image w-full aspect-4/3 hover-effect-cont">
               <img
                 src={livingRoom}
                 alt="brittocharette livingRoom"
@@ -317,7 +289,7 @@ const Showcase = () => {
 
         <div className="sub flex flex-col gap-8 md:gap-4 items-center md:items-start md:w-1/3">
           <div className="image-container w-full relative flex flex-col items-center">
-            <div className="image w-full aspect-4/3 md:aspect-1/1">
+            <div className="image w-full aspect-4/3 md:aspect-1/1 hover-effect-cont">
               <img
                 src={bathtub}
                 alt="brittocharette bathtub"
@@ -339,7 +311,12 @@ const Showcase = () => {
 
             <div
               className="hidden md:block absolute"
-              style={{ top: "85%", left: "89%", height: "13%", aspectRatio: "1/1" }}
+              style={{
+                top: "85%",
+                left: "89%",
+                height: "13%",
+                aspectRatio: "1/1",
+              }}
             >
               <IconButton width="100%" />
             </div>

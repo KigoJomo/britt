@@ -74,7 +74,7 @@ h1 {
 h2 {
   font-size: calc(
     var(--base-font-size) * var(--golden-ratio)
-  ); /* H2 is one golden ratio larger than base */
+  );
 }
 
 h3 {
@@ -382,6 +382,13 @@ p {
       32% 100%,
       0% 100%
     );
+  }
+  .hover-effect-cont{
+    overflow: hidden;
+  }
+  .hover-effect-cont img:hover {
+    transform: scale(1.1);
+    transition: all .5s ease;
   }
 }
 

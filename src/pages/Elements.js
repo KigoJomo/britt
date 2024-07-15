@@ -19,7 +19,7 @@ const Button = ({ label, to }) => {
 const IconButton = ({width}) => {
   return (
     <>
-      <button className={`btn-ic bg-black text-white flex items-center justify-center rounded-full w-16 text-3xl aspect-1`} style={{width: width}}><Link to="/projects">&#x2197;</Link></button>
+      <button className="btn-ic bg-black text-white flex items-center justify-center rounded-full w-16 text-3xl aspect-1" style={{width: width}}><Link to="/projects">&#x2197;</Link></button>
     </>
   );
 };
