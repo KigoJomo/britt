@@ -6,7 +6,6 @@ import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 import NoPage from "./pages/NoPage"
-// import "./assets/styles/global.scss";
 import "./index.css"
 
 export default function App() {
@@ -15,10 +14,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />}  />
-            <Route path="projects" element={<Projects />}  />
-            <Route path="contact" element={<Contact />}  />
-            <Route path="*" element={<NoPage />}  />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

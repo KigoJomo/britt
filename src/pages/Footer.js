@@ -66,7 +66,10 @@ const SocialLink = (props) => {
 
 const SocialLinks = () => {
   return (
-    <div className="social-links bg-white flex flex-col items-center" style={{height: "300px"}}>
+    <div
+      className="social-links bg-white flex flex-col items-center"
+      style={{ height: "300px" }}
+    >
       <ScrollAnimationWrapper>
         <img
           className="wheel-black md:h-4/5 h-1/3"
@@ -88,7 +91,7 @@ const SocialLinks = () => {
         <SocialLink platform="pinterest" username="kigojomo" />
         <SocialLink platform="twitter" />
         <SocialLink platform="facebook" />
-        <SocialLink platform="instagram" username="kigo.jomo" />
+        <SocialLink platform="instagram" username="orb_designs_" />
         <SocialLink platform="youtube" username="@kigojomo" />
       </ScrollAnimationWrapper>
     </div>
@@ -129,11 +132,11 @@ const Credits = () => {
       <Link
         target="__blank"
         rel="noopener noreferrer"
-        to="https://github.com/KigoJomo/"
+        to="https://instagram.com/orb_designs_/"
         className="font-medium"
         style={{ textDecoration: "underline" }}
       >
-        KigoJomo
+        ORB
       </Link>
     </div>
   );

@@ -27,7 +27,7 @@ const HeroSection = () => {
         className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
       >
         <div className="flex flex-col items-center w-full">
-          <h1 className="w-full text-center md:text-8xl font-normal">
+          <h1 className="tracking-tighter md:tracking-normal text-3xl w-full text-center md:text-8xl font-normal">
             luxurious interior
           </h1>
           <span className="flex items-center justify-center gap-2 w-full">
@@ -36,14 +36,14 @@ const HeroSection = () => {
               alt="mini-bar"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
-            <h1 className="md:text-8xl font-normal">and</h1>
+            <h1 className="tracking-tighter md:tracking-normal text-3xl md:text-8xl font-normal">and</h1>
             <img
               src={bedroom}
               alt="bedroom"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
           </span>
-          <h1 className="w-full text-center md:text-8xl font-normal">
+          <h1 className="tracking-tighter md:tracking-normal text-3xl w-full text-center md:text-8xl font-normal">
             industrial design
           </h1>
         </div>

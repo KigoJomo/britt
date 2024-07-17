@@ -72,9 +72,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(
-    var(--base-font-size) * var(--golden-ratio)
-  );
+  font-size: calc(var(--base-font-size) * var(--golden-ratio));
 }
 
 h3 {
@@ -383,12 +381,12 @@ p {
       0% 100%
     );
   }
-  .hover-effect-cont{
+  .hover-effect-cont {
     overflow: hidden;
   }
   .hover-effect-cont img:hover {
     transform: scale(1.1);
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 }
 
@@ -414,5 +412,20 @@ p {
     2% 100%,
     0% 91%,
     0% 15%
+  );
+}
+
+.service-image-clipped {
+  clip-path: polygon(
+    20.24% 18.67%,
+    23.87% 13.44%,
+    25.54% 6.81%,
+    25.54% 0%,
+    107.53% 0%,
+    107.53% 100%,
+    0% 100%,
+    0% 23%,
+    7.43% 23%,
+    14.64% 21.34%
   );
 }

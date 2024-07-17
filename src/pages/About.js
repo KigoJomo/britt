@@ -5,6 +5,7 @@ import {
 } from "../components/ScrollAnimationWrapper";
 import AboutHeader from "../components/AboutHeader";
 import AboutPrincipals from "../components/AboutPrincipals";
+import AboutServices from "../components/AboutServices";
 
 const About = () => {
   return (
@@ -15,6 +16,10 @@ const About = () => {
 
       <ScrollAnimationWrapper variants={fadeInVariants}>
         <AboutPrincipals />
+      </ScrollAnimationWrapper>
+
+      <ScrollAnimationWrapper variants={fadeInVariants}>
+        <AboutServices />
       </ScrollAnimationWrapper>
     </>
   );
