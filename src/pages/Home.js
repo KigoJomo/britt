@@ -24,7 +24,7 @@ const HeroSection = () => {
     <ScrollAnimationWrapper variants={fadeInVariants}>
       <section
         id="hero-section"
-        className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:py-4"
+        className="flex flex-col items-center gap-12 w-full px-4 md:px-10 md:pb-4 md:pt-10"
       >
         <div className="flex flex-col items-center w-full">
           <h1 className="tracking-tighter md:tracking-normal text-3xl w-full text-center md:text-8xl font-normal">

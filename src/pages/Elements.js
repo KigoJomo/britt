@@ -24,7 +24,7 @@ const IconButton = ({width}) => {
   );
 };
 
-const IconTextButton = ({to, text}) => {
+const IconTextButton = ({to = "#", text}) => {
   return (
     <>
       <button className="border-0">

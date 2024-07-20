@@ -1,11 +1,28 @@
 import React from "react";
+import { IconTextButton } from "../pages/Elements";
 
-const PortfolioImage = ({ aspect = "16/9", text, width, height }) => {
+const PortfolioImage = ({ text, width, height, image }) => {
+
   return (
     <div
-      className={`border w-full aspect-${aspect} md:w-${width} md:h-${height} flex items-center justify-center`}
+      className={`w-full p-4 aspect-16/9 ${width} ${height} flex items-center justify-center relative`}
     >
-      <h1>{text}</h1>
+      <div
+        className="image w-full aspect-16/9 md:h-full border"
+        style={{ filter: "url(#rounder)" }}
+      >
+        <img
+          src={image}
+          alt={`Brittocharette ${text}`}
+          className="portfolio-clip"
+        />
+      </div>
+      <div
+        className="absolute"
+        style={{ top: "calc(100% - 40px)", right: "16px" }}
+      >
+        <IconTextButton text={text} />
+      </div>
     </div>
   );
 };

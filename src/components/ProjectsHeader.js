@@ -30,18 +30,21 @@ const ProjectsHeader = () => {
       </div>
 
       <div className="image-container w-full md:w-3/5 flex flex-col items-center relative">
-        <div className="image w-full md:w-4/5">
-            <img
-              src={bright2}
-              alt="BrittoCharette interior design"
-              className="w-full aspect-4/3 projects-header-clipped"
-            />
+        <div
+          className="image w-full md:w-4/5"
+          style={{ filter: "url(#rounder)" }}
+        >
+          <img
+            src={bright2}
+            alt="BrittoCharette interior design"
+            className="w-full aspect-4/3 projects-header-clipped"
+          />
         </div>
-        <div className="absolute" style={{top: "92%"}}>
+        <div className="absolute" style={{ top: "92%" }}>
           <IconTextButton to="#portfolio" text="discover more" />
         </div>
       </div>
-      <AnimatedSlider/>
+      <AnimatedSlider />
     </section>
   );
 };

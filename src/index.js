@@ -6,7 +6,9 @@ import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 import NoPage from "./pages/NoPage"
-import "./index.css"
+import "./index.css";
+
+import "./assets/fonts/Phonk Regular DEMO.otf";
 
 export default function App() {
     return (
