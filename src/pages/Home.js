@@ -4,6 +4,7 @@ import {
   ScrollAnimationWrapper,
   fadeInVariants,
 } from "../components/ScrollAnimationWrapper";
+import AnimatedSlider from "../components/AnimatedSlider";
 
 // Import images
 import bedroom from "../assets/images/bedroom.webp";
@@ -15,7 +16,6 @@ import shower from "../assets/images/shower.webp";
 import wardrobe from "../assets/images/wardrobe.webp";
 import user from "../assets/images/user.webp";
 import user2 from "../assets/images/user2.webp";
-import star from "../assets/images/star.webp";
 
 
 // Hero section component
@@ -172,21 +172,6 @@ const Stats = () => {
   );
 };
 
-const SliderContent = () => {
-  return (
-    <>
-      <img src={star} alt="star" className="h-9" />
-      <h2 className="flex-shrink-0 uppercase">/</h2>
-      <h2 className="flex-shrink-0 uppercase">
-        Brittocharette luxurious interior
-      </h2>
-      <img src={star} alt="star" className="h-9" />
-      <h2 className="flex-shrink-0 uppercase">/</h2>
-      <h2 className="flex-shrink-0 uppercase">miami-based interior design</h2>
-    </>
-  );
-};
-
 // Showroom section component
 const Showroom = () => {
   return (
@@ -232,14 +217,7 @@ const Showroom = () => {
             <IconTextButton to="about" text="about us" />
           </div>
         </div>
-        <div className="slider-wrapper absolute bottom-0 left-0 w-full overflow-hidden bg-slate">
-          <div className="slider flex items-center gap-8">
-            <SliderContent />
-            <SliderContent />
-            <SliderContent />
-            <SliderContent />
-          </div>
-        </div>
+        <AnimatedSlider />
       </section>
     </ScrollAnimationWrapper>
   );

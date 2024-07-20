@@ -2,10 +2,11 @@ import React from "react";
 import { IconTextButton } from "../pages/Elements";
 import bright1 from "../assets/images/bright1.webp";
 import bright2 from "../assets/images/bright2.webp";
+import AnimatedSlider from "./AnimatedSlider";
 
 const ProjectsHeader = () => {
   return (
-    <section className="w-full min-h-full md:h-full px-4 py-4 md:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+    <section className="w-full min-h-full md:h-full px-4 pt-4 pb-20 md:p-12 md:pb-24 flex flex-col md:flex-row gap-8 md:gap-12 items-center relative">
       <div className="desc w-full md:w-2/5 md:h-full flex flex-col items-center md:items-start gap-8 md:justify-around">
         <h1 className="text-center md:text-left md:text-7xl order-1">
           our <br className="hidden md:block" /> signature{" "}
@@ -40,6 +41,7 @@ const ProjectsHeader = () => {
           <IconTextButton to="#portfolio" text="discover more" />
         </div>
       </div>
+      <AnimatedSlider/>
     </section>
   );
 };

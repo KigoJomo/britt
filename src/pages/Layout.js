@@ -119,7 +119,7 @@ const Layout = () => {
         </div>
       </header>
 
-      <main className="w-full bg-white flex flex-col gap-24 flex-1">
+      <main className="w-full bg-white flex flex-col gap-24">
         <Outlet />
       </main>
 
