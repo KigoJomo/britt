@@ -28,4 +28,3 @@ yarn-error.log*
 /generateCodeSummary.js
 /codeSummary.txt
 /design-reference
-/src/data/rename_images.py
