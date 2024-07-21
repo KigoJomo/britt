@@ -1,7 +1,11 @@
 import React from "react";
-import { ScrollAnimationWrapper, fadeInVariants } from "../components/ScrollAnimationWrapper";
+import {
+  ScrollAnimationWrapper,
+  fadeInVariants,
+} from "../components/ScrollAnimationWrapper";
 import ProjectsHeader from "../components/ProjectsHeader";
 import ProjectsPortfolio from "../components/ProjectsPortfolio";
+import OurProjects from "../components/OurProjects";
 
 const Projects = () => {
   return (
@@ -10,11 +14,11 @@ const Projects = () => {
         <ProjectsHeader />
       </ScrollAnimationWrapper>
 
-      {/* slider goes here */}
-
       <ScrollAnimationWrapper variants={fadeInVariants}>
         <ProjectsPortfolio />
       </ScrollAnimationWrapper>
+
+      <OurProjects />
     </>
   );
 };

@@ -61,6 +61,18 @@ img {
   filter: url(#round);
 }
 
+@media (min-width: 768px) {
+  .rounder-clip {
+    filter: url(#rounder);
+  }
+}
+
+/* @media (max-width: 767px) {
+  .rounder-clip {
+    filter: url(#round);
+  }
+} */
+
 .image img {
   width: 100%;
   height: 100%;
@@ -475,6 +487,19 @@ p {
     100% var(--top),
     var(--left) var(--top),
     var(--left) 100%,
+    0% 100%
+  );
+}
+
+.project-image-clipped {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 73.78%,
+    96.94% 79.23%,
+    88.31% 79.23%,
+    88.31% 94.55%,
+    85.25% 100%,
     0% 100%
   );
 }
