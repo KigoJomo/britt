@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Millina",
+    "description": "Millina is a 7435 sq.ft. home with a modern minimalist interior, featuring open spaces and natural light.",
+    "category": "family-room",
+    "images": ["./images/millina-1.webp", "./images/millina-2.webp"]
+  },
+  {
+    "title": "Indianapolis",
+    "description": "Ultra luxury modern design with state-of-the-art kitchen and open floor plan to ensure elegance and functionality.",
+    "category": "kitchen",
+    "images": ["./images/indianapolis-1.webp", "./images/indianapolis-2.webp"]
+  },
+  {
+    "title": "Brookville",
+    "description": "Brookville combines innovation and home elegance with a luxurious master bath and smart living spaces.",
+    "category": "bathroom",
+    "images": ["./images/brookville-1.webp", "./images/brookville-2.webp"]
+  },
+  {
+    "title": "Jade Signature",
+    "description": "Jade Signature is a 1920 sq.ft. home with modern architecture and spacious living areas, ideal for large families.",
+    "category": "living-room",
+    "images": ["./images/jade-signature-1.webp", "./images/jade-signature-2.webp"]
+  },
+  {
+    "title": "Sunset Villa",
+    "description": "Sunset Villa offers breathtaking views with a contemporary interior and spacious outdoor living areas.",
+    "category": "family-room",
+    "images": ["./images/sunset-villa-1.webp", "./images/sunset-villa-2.webp"]
+  },
+  {
+    "title": "Ocean Breeze",
+    "description": "Ocean Breeze features coastal design elements with an open kitchen and dining area perfect for entertaining.",
+    "category": "kitchen",
+    "images": ["./images/ocean-breeze-1.webp", "./images/ocean-breeze-2.webp"]
+  },
+  {
+    "title": "Mountain Retreat",
+    "description": "Mountain Retreat combines rustic charm with modern amenities, featuring a luxurious bathroom and cozy living room.",
+    "category": "bathroom",
+    "images": ["./images/mountain-retreat-1.webp", "./images/mountain-retreat-2.webp"]
+  },
+  {
+    "title": "Urban Loft",
+    "description": "Urban Loft offers sleek, industrial design with large windows, exposed brick, and open living spaces.",
+    "category": "living-room",
+    "images": ["./images/urban-loft-1.webp", "./images/urban-loft-2.webp"]
+  },
+  {
+    "title": "Country Estate",
+    "description": "Country Estate is a traditional home with elegant interior design, featuring a spacious bedroom and sleek bathroom.",
+    "category": "bedroom",
+    "images": ["./images/country-estate-1.webp", "./images/country-estate-2.webp"]
+  },
+  {
+    "title": "Cityscape",
+    "description": "Cityscape is an urban apartment with modern finishes, smart technology, and a functional, stylish kitchen.",
+    "category": "kitchen",
+    "images": ["./images/cityscape-1.webp", "./images/cityscape-2.webp"]
+  },
+  {
+    "title": "Lakeside Manor",
+    "description": "Lakeside Manor features serene views and luxurious amenities, including a spa-like bathroom and spacious bedrooms.",
+    "category": "bathroom",
+    "images": ["./images/lakeside-manor-1.webp", "./images/lakeside-manor-2.webp"]
+  },
+  {
+    "title": "Penthouse Suite",
+    "description": "Penthouse Suite offers panoramic city views, luxurious living areas, and a state-of-the-art bedroom.",
+    "category": "bedroom",
+    "images": ["./images/penthouse-suite-1.webp", "./images/penthouse-suite-2.webp"]
+  },
+  {
+    "title": "Seaside Cottage",
+    "description": "Seaside Cottage blends charm with comfort, featuring a cozy family room and a kitchen with coastal accents.",
+    "category": "family-room",
+    "images": ["./images/seaside-cottage-1.webp", "./images/seaside-cottage-2.webp"]
+  },
+  {
+    "title": "Modern Farmhouse",
+    "description": "Modern Farmhouse combines rustic elements with contemporary design, offering a gourmet kitchen and luxurious bathroom.",
+    "category": "kitchen",
+    "images": ["./images/modern-farmhouse-1.webp", "./images/modern-farmhouse-2.webp"]
+  },
+  {
+    "title": "Desert Oasis",
+    "description": "Desert Oasis features a modern desert aesthetic, with an expansive bedroom and spacious living area.",
+    "category": "bedroom",
+    "images": ["./images/desert-oasis-1.webp", "./images/desert-oasis-2.webp"]
+  }
+]
