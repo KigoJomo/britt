@@ -7,7 +7,7 @@ import {
 
 const Project = ({ title, description, category, images }) => {
   return (
-    <ScrollAnimationWrapper variants={fadeInVariants}>
+    <ScrollAnimationWrapper variants={fadeInVariants} triggerOnce={false}>
       <div className="project w-full flex flex-col md:flex-row-reverse md:items-center gap-2 md:gap-6 px-4 py-4 md:py-8 md:border-b-2 border-slate">
         <div className="image-container w-full md:w-3/5 relative">
           <div className="image w-full rounder-clip">

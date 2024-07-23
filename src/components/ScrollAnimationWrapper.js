@@ -2,10 +2,10 @@ import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const ScrollAnimationWrapper = ({ children, variants }) => {
+const ScrollAnimationWrapper = ({ children, variants, triggerOnce = true }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: triggerOnce,
     threshold: 0.1,
   });
 

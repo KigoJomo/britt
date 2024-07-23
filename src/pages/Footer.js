@@ -32,7 +32,6 @@ const ScrollAnimationWrapper = ({ children }) => {
 
   useEffect(() => {
     if (inView && ref.current) {
-      console.log("Footer in view");
       ref.current.classList.remove("Hidden");
     }
   }, [inView]);

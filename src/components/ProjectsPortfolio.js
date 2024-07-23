@@ -8,7 +8,7 @@ import familyRoom from "../assets/images/family-room.webp";
 
 const ProjectsPortfolio = () => {
   return (
-    <section id="portfolio" className="w-full md:h-90vh md:py-2 md:px-12">
+    <section id="portfolio" className="w-full md:h-90vh md:max-h-800 md:py-2 md:px-12">
       <div className="w-full h-full flex flex-col md:flex-wrap">
         <PortfolioImage
           image={kitchen}

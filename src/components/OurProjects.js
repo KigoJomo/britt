@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   ScrollAnimationWrapper,
   fadeInVariants,
@@ -59,6 +59,8 @@ const OurProjects = () => {
   const [projectsPerPage] = useState(5);
   const [currentFilter, setCurrentFilter] = useState("All");
 
+  const sectionRef = useRef(null);
+
   useEffect(() => {
     let filteredProjects = projectsData;
 
@@ -80,10 +82,12 @@ const OurProjects = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleFilterChange = (filter) => {
-    console.log(`Category: ${filter}`);
     setCurrentFilter(filter);
     setCurrentPage(1); // Reset to first page on filter change
   };
@@ -98,10 +102,11 @@ const OurProjects = () => {
   return (
     <section className="w-full flex flex-col items-center gap-6">
       <ScrollAnimationWrapper variants={fadeInVariants}>
-        <div className="w-full flex flex-col items-center gap-4 md:gap-6">
-          <h1 className="text-2xl text-center md:text-5xl">
-            Our Projects
-          </h1>
+        <div
+          className="w-full flex flex-col items-center gap-4 md:gap-6"
+          ref={sectionRef}
+        >
+          <h1 className="text-2xl text-center md:text-5xl">Our Projects</h1>
           <div className="filter w-full flex items-center justify-center gap-2 md:gap-6 flex-wrap">
             {[
               "All",

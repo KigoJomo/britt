@@ -1,7 +1,6 @@
 // Layout .js
-
-import { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 import { Button } from "./Elements";
 import Footer from "./Footer";
@@ -56,9 +55,14 @@ const NavigationLink = ({ label, to, onClick}) => {
 
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    document.getElementById("root").scrollTop = 0;
+  }, [location]);
 
   return (
     <>
@@ -95,7 +99,7 @@ const Layout = () => {
             className={`absolute left-0 w-full h-screen bg-white ${
               menuOpen ? "translate-x-0" : "translate-x-full"
               }`}
-            style={{top: "98%"}}
+            style={{top: "90%"}}
           >
             <ul className="flex flex-col items-center justify-start gap-4 w-full h-full px-12 py-4">
               <NavigationLink label="Home" to="/" onClick={closeMenu} />

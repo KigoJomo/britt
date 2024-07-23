@@ -16,7 +16,6 @@ const AboutHeader = () => {
           <p className="md:text-left text-right">
             Luxurious Interior and
             <br className="md:hidden" />
-            <p> </p>
             Industrial Design
           </p>
           <div className="hidden md:block">
