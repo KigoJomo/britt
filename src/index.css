@@ -82,13 +82,17 @@ img {
 }
 
 /* Set font sizes for headings and paragraph based on base size and golden ratio */
-h1 {
+h1{
   font-size: calc(
     var(--base-font-size) * var(--golden-ratio) * var(--golden-ratio)
   );
   /* font-family: "Syncopate", sans-serif; */
   font-family: "Krona One", sans-serif;
   /* font-family: "Phonk", sans-serif; */
+}
+
+h1 span{
+  font-size: inherit;
 }
 
 h2 {

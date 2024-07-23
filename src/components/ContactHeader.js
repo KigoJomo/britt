@@ -1,7 +1,8 @@
 import React from "react";
 import AnimatedSlider from "./AnimatedSlider";
 import {
-  ScrollAnimationWrapper
+  ScrollAnimationWrapper,
+  fadeInVariants
 } from "./ScrollAnimationWrapper";
 
 import diningRoom from "../assets/images/bright1.webp";
@@ -31,28 +32,33 @@ const Image = ({ width, aspect, src, alt, animationDuration = 1 }) => {
 const ContactHeader = () => {
   return (
     <section className="w-full flex flex-col items-center gap-12 py-6">
-      <h1 className="flex flex-col items-center gap-1 md:gap-4 text-3xl md:text-7xl font-bold text-nowrap text-center">
-        <span className="flex items-center justify-center gap-2">
-          Consult with
-          <img
-            src={diningRoom}
-            alt="Brittocharette dining room"
-            className="h-8 rounded-full aspect-2 md:h-16"
-          />
-          us
-        </span>
-        <span className="flex items-center gap-2">
-          <img
-            src={diningRoom2}
-            alt="Brittocharette dining room"
-            className="h-8 rounded-full aspect-3 md:h-16"
-          />
-          before you
-        </span>
-        <span>commit</span>
-      </h1>
+      <ScrollAnimationWrapper variants={fadeInVariants}>
+        <h1 className="flex flex-col items-center gap-1 md:gap-4 text-3xl md:text-7xl font-bold text-nowrap text-center">
+          <span className="flex items-center justify-center gap-2">
+            Consult with
+            <img
+              src={diningRoom}
+              alt="Brittocharette dining room"
+              className="h-8 rounded-full aspect-2 md:h-16"
+            />
+            us
+          </span>
+          <span className="flex items-center gap-2">
+            <img
+              src={diningRoom2}
+              alt="Brittocharette dining room"
+              className="h-8 rounded-full aspect-3 md:h-16"
+            />
+            before you
+          </span>
+          <span>commit</span>
+        </h1>
+      </ScrollAnimationWrapper>
 
-      <AnimatedSlider absolute={false} />
+      <ScrollAnimationWrapper variants={fadeInVariants}>
+        <AnimatedSlider absolute={false} />
+      </ScrollAnimationWrapper>
+
 
       <div className="images w-full px-4 md:px-8 flex flex-col gap-2">
         <Image
