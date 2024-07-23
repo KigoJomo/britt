@@ -1,10 +1,11 @@
 import React from "react";
+import ContactHeader from "../components/ContactHeader";
 
 const Contact = () => {
   return (
     <>
       <section>
-        <h1>Contact</h1>
+          <ContactHeader />
       </section>
     </>
   );

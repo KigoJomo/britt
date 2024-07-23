@@ -33,13 +33,15 @@ const HeroSection = () => {
           <span className="flex items-center justify-center gap-2 w-full">
             <img
               src={bar}
-              alt="mini-bar"
+              alt="Brittocharette mini-bar"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
-            <h1 className="tracking-tighter md:tracking-normal text-3xl md:text-8xl font-normal">and</h1>
+            <h1 className="tracking-tighter md:tracking-normal text-3xl md:text-8xl font-normal">
+              and
+            </h1>
             <img
               src={bedroom}
-              alt="bedroom"
+              alt="Brittocharette bedroom"
               className="h-10 rounded-full aspect-2 md:h-16"
             />
           </span>
@@ -59,12 +61,12 @@ const HeroSection = () => {
             <div className="image w-full aspect-1 md:aspect-3 hover-effect-cont">
               <img
                 src={study}
-                alt="britto study design"
+                alt="Brittocharette study design"
                 className="hero-image-clipped md:hidden"
               />
               <img
                 src={study}
-                alt="britto study design"
+                alt="Brittocharette study design"
                 className="hero-image hidden md:block"
               />
             </div>

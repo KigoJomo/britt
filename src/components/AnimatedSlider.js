@@ -16,17 +16,21 @@ const SliderContent = () => {
   );
 };
 
-const AnimatedSlider = () => {
-    return (
-      <div className="slider-wrapper absolute bottom-0 left-0 w-full overflow-hidden bg-slate">
-        <div className="slider flex items-center gap-8">
-          <SliderContent />
-          <SliderContent />
-          <SliderContent />
-          <SliderContent />
-        </div>
+const AnimatedSlider = ({ absolute = true }) => {
+  return (
+    <div
+      className={`slider-wrapper ${
+        absolute ? "absolute" : "static"
+      } bottom-0 left-0 w-full overflow-hidden bg-slate`}
+    >
+      <div className="slider flex items-center gap-8">
+        <SliderContent />
+        <SliderContent />
+        <SliderContent />
+        <SliderContent />
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default AnimatedSlider;
