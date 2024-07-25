@@ -9,7 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
 
 @font-face {
-  font-family: "Phonk"; /*Can be any text*/
+  font-family: "Phonk";
   src: local("AirbnbCerealLight"),
     url("./assets/fonts/Phonk\ Regular\ DEMO.otf") format("opentype");
 }
@@ -82,7 +82,7 @@ img {
 }
 
 /* Set font sizes for headings and paragraph based on base size and golden ratio */
-h1{
+h1 {
   font-size: calc(
     var(--base-font-size) * var(--golden-ratio) * var(--golden-ratio)
   );
@@ -91,7 +91,7 @@ h1{
   /* font-family: "Phonk", sans-serif; */
 }
 
-h1 span{
+h1 span {
   font-size: inherit;
 }
 
@@ -216,16 +216,46 @@ p {
 
 .social-links .links-container,
 .social-links .links-container-md {
+  /* --bottom: 0%; */
+  --transform: 0;
   width: 85%;
   height: 100%;
   position: relative;
 }
 
+@keyframes bounce {
+  0% {
+    bottom: calc(var(--bottom) + 25%);
+    transform: rotateZ(0deg);
+  }
+  25%{
+    bottom: calc(var(--bottom) + 0%);
+    transform: var(--transform);
+  }
+  50% {
+    bottom: calc(var(--bottom) + 15%);
+    transform: rotateZ(0deg);
+  }
+  75% {
+    bottom: calc(var(--bottom) + 0%);
+    transform: var(--transform);
+  }
+  85%{
+    bottom: calc(var(--bottom) + 5%);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    bottom: calc(var(--bottom));
+    transform: var(--transform);
+  }
+}
+
 .links-container *,
 .links-container-md * {
   position: absolute;
-  transition: left 0.5s ease-out, opacity 0.3s ease, bottom 1s linear,
-    transform 1.5s ease;
+  transition: left 2.5s ease-out, opacity 0.3s ease, transform 1s ease;
+  bottom: var(--bottom);
+  animation: bounce 2s linear;
   opacity: 1;
 }
 
@@ -236,7 +266,8 @@ p {
 .links-container-md .wheel-black,
 .links-container-md .wheel-black-2 {
   aspect-ratio: 1;
-  bottom: 0;
+  --bottom: 0%;
+  --transform: rotateZ(-10deg);
 }
 
 .links-container .wheel-black,
@@ -251,11 +282,11 @@ p {
 
 .links-container .wheel-white,
 .links-container-md .wheel-white {
-  bottom: 24%;
+  --bottom: 24%;
   left: 21%;
   border: var(--border);
   border-radius: 50%;
-  transform: rotateZ(-45deg);
+  --transform: rotateZ(-45deg);
 }
 
 .links-container .social-tags,
@@ -264,10 +295,17 @@ p {
   color: var(--color-text-1);
   border: var(--border);
   border-radius: 24px;
-  /* padding: 0.6rem 2rem; */
+  width: 23%;
   text-transform: uppercase;
   text-align: center;
   font-size: calc(var(--h3-font-size) * 1.5);
+}
+
+@media(max-width: 767px){
+  .links-container .social-tags,
+.links-container-md .social-tags{
+    width: fit-content;
+  }
 }
 
 .links-container .social-tags::after,
@@ -288,95 +326,100 @@ p {
 
 /* Specific values for .links-container */
 .links-container .vimeo {
-  bottom: 66%;
+  --bottom: 66%;
   left: 17%;
-  transform: rotateZ(-25deg);
+  --transform: rotateZ(-25deg);
 }
 
 .links-container .pinterest {
-  bottom: 65%;
+  --bottom: 65%;
   left: 43%;
-  transform: rotateZ(0deg);
+  --transform: rotateZ(0deg);
 }
 
 .links-container .twitter {
-  bottom: 44%;
+  --bottom: 44%;
   left: 69%;
-  transform: rotateZ(75deg);
+  --transform: rotateZ(75deg);
 }
 
 .links-container .facebook {
-  bottom: 44%;
+  --bottom: 44%;
   left: 40%;
-  transform: rotateZ(39deg);
+  --transform: rotateZ(39deg);
 }
 
 .links-container .instagram {
-  bottom: 0%;
+  --bottom: 0%;
   left: 30%;
-  transform: rotateZ(0deg);
+  --transform: rotateZ(0deg);
 }
 
 .links-container .youtube {
-  bottom: 41%;
+  --bottom: 41%;
   left: -4%;
-  transform: rotateZ(-50deg);
+  --transform: rotateZ(-50deg);
 }
 
 .links-container .linkedIn {
-  bottom: 19%;
+  --bottom: 19%;
   left: 51%;
-  transform: rotateZ(-35deg);
+  --transform: rotateZ(-35deg);
 }
 
-/* Specific values for .links-container-md */
+/* Specific values for .links-container-md ( >= 768px) */
 
 .links-container-md .vimeo {
-  bottom: 77%;
+  --bottom: 77%;
   left: 5%;
-  transform: rotateZ(10deg);
+  --transform: rotateZ(10deg);
 }
 
 .links-container-md .pinterest {
-  bottom: 8.5%;
+  --bottom: 8.5%;
   left: 17.65%;
-  transform: rotateZ(-15deg);
+  --transform: rotateZ(-15deg);
 }
 
 .links-container-md .twitter {
-  bottom: 3.25%;
+  --bottom: 3.25%;
   left: 34%;
-  transform: rotateZ(-5deg);
+  --transform: rotateZ(-5deg);
 }
 
 .links-container-md .facebook {
-  bottom: 30%;
+  --bottom: 30%;
   left: 38%;
-  transform: rotateZ(-23deg);
+  --transform: rotateZ(-23deg);
 }
 
 .links-container-md .instagram {
-  bottom: 18%;
+  --bottom: 18%;
   left: 51.25%;
-  transform: rotateZ(5deg);
+  --transform: rotateZ(5deg);
 }
 
 .links-container-md .youtube {
-  bottom: 0%;
+  --bottom: 0%;
   left: 60%;
-  transform: rotateZ(0deg);
+  --transform: rotateZ(0deg);
 }
 
 .links-container-md .linkedIn {
-  bottom: 49%;
+  --bottom: 49%;
   left: 62.5%;
-  transform: rotateZ(-32deg);
+  --transform: rotateZ(-32deg);
 }
 .social-links .Hidden * {
   left: 0% !important;
   bottom: 120% !important;
-  transform: rotateZ(100deg) !important;
+  transform: rotateZ(0deg);
+  animation: none !important;
   opacity: 0;
+}
+
+.social-links .landed *{
+  transform: var(--transform) !important;
 }
 
 .philosophy-image-clipped {

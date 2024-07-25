@@ -9,8 +9,8 @@ const ScrollAnimationWrapper = ({ children }) => {
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Assuming md is 768px
   const [inViewRef, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.9,
+    triggerOnce: false,
+    threshold: 0.5,
   });
 
   const handleResize = () => {
@@ -33,6 +33,12 @@ const ScrollAnimationWrapper = ({ children }) => {
   useEffect(() => {
     if (inView && ref.current) {
       ref.current.classList.remove("Hidden");
+      setTimeout(() => {
+        ref.current.classList.add("landed");
+      }, 2000);
+    } else {
+      ref.current.classList.add("Hidden");
+      ref.current.classList.remove("landed");
     }
   }, [inView]);
 
@@ -41,24 +47,22 @@ const ScrollAnimationWrapper = ({ children }) => {
       ref={setRefs}
       className={`Hidden ${
         isMobile ? "links-container" : "links-container-md"
-      } w-5/6 relative`}
+      } w-3/4 relative`}
     >
       {children}
     </div>
   );
 };
 
-const SocialLink = (props) => {
+const SocialLink = ({ platform, username }) => {
   return (
     <a
-      href={`https://${props.platform}.com${
-        props.username ? `/${props.username}/` : ""
-      }`}
-      className={`social-tags ${props.platform} py-1 px-4 md:w-1/5 md:px-8 md:py-2`}
+      href={`https://${platform}.com${username ? `/${username}/` : ""}`}
+      className={`social-tags ${platform} py-1 px-4 md:w-1/5 md:px-8 md:py-2`}
       target="__blank"
       rel="noopener noreferrer"
     >
-      {props.platform}
+      {platform}
     </a>
   );
 };
@@ -116,9 +120,13 @@ const Info = () => {
 const ContactBanner = () => {
   return (
     <div className="contact-banner pb-4 md:py-8 px-2 flex justify-center items-center">
-      <h1 className="text-white text-4xl md:text-9xl uppercase tracking-wider">contact</h1>
+      <h1 className="text-white text-4xl md:text-9xl uppercase tracking-wider">
+        contact
+      </h1>
       <img src={star} alt="brittocharette" className="h-8 md:h-16" />
-      <h1 className="text-white text-4xl md:text-9xl  uppercase tracking-wider">us</h1>
+      <h1 className="text-white text-4xl md:text-9xl  uppercase tracking-wider">
+        us
+      </h1>
     </div>
   );
 };
@@ -139,7 +147,7 @@ const Credits = () => {
       </Link>
     </div>
   );
-}
+};
 
 const Footer = () => {
   return (

@@ -12,7 +12,7 @@ const ContactDetail = ({ label, value }) => {
 const ContacDetails = () => {
     return (
       <div className="contact-details w-full md:w-1/2 flex flex-col">
-        <ContactDetail label="Email" value="brittocharette.com" />
+        <ContactDetail label="Email" value="info@brittocharette.com" />
         <ContactDetail label="Number" value="305 640 5005" />
         <ContactDetail
           label="Address"

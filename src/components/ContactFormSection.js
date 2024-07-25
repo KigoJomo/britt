@@ -1,24 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import formImage from "../assets/images/lakeside-manor-1.webp";
 import FilterButton from "./FilterButton";
+import CategorySelect from "./CategorySelect";
 
-const Investments = [
-  { text: "< $400", active: false },
-  {
-    text: "$400 - $700",
-    active: true,
-  },
-  {
-    text: "$701 - $800",
-    active: false,
-  },
-  { text: "$800 >", active: false },
-];
+const Investments = ["< $400", "$400 - $700", "$701 - $800", "$800 >"];
+const RoomTypes = ["family room", "living room", "bedroom", "kitchen"];
 
-const FieldWrapper = ({ id, type, label, required=false }) => {
+const FieldWrapper = ({ id, type, label, required = false }) => {
   return (
     <div className="fieldwrapper w-full flex flex-col gap-2 md:gap-4">
-      <label htmlFor={id} className="text-xs md:text-base capitalize font-light">
+      <label
+        htmlFor={id}
+        className="text-xs md:text-base capitalize font-light"
+      >
         {label}
       </label>
       {type === "textarea" ? (
@@ -42,32 +36,36 @@ const FieldWrapper = ({ id, type, label, required=false }) => {
 };
 
 const ContactForm = () => {
+  const [currentRoomType, setCurrentRoomType] = useState(RoomTypes[0]);
+  const [currentInvestment, setCurrentInvestment] = useState(Investments[1]);
+
   return (
     <form className="w-full md:w-1/2 flex flex-col gap-6 md:gap-10">
       <h1 className="w-full text-nowrap md:text-5xl">get in touch</h1>
       <div className="name-email w-4/5 md:w-full flex gap-6">
         <FieldWrapper id={"name"} type={"text"} label={"name"} required />
-        <FieldWrapper id={"email"} type={"email"} label={"email address"} required />
+        <FieldWrapper
+          id={"email"}
+          type={"email"}
+          label={"email address"}
+          required
+        />
       </div>
-      <div className="category-select w-full flex flex-col gap-4">
-        <label className="text-xs md:text-base capitalize font-light">choose</label>
-        <div className="categories flex items-center justify-start flex-wrap gap-4">
-          <FilterButton text={"family room"} active />
-          <FilterButton text={"living room"} />
-          <FilterButton text={"bedroom"} />
-          <FilterButton text={"kitchen"} />
-        </div>
-      </div>
-      <div className="category-select w-full flex flex-col gap-4">
-        <label className="text-xs md:text-base capitalize font-light">
-          investment consideration
-        </label>
-        <div className="categories flex items-center justify-start flex-wrap gap-4">
-          {Investments.map((button) => (
-            <FilterButton {...button} key={button.text} />
-          ))}
-        </div>
-      </div>
+
+      <CategorySelect
+        label="Choose a room type"
+        options={RoomTypes}
+        selectedOption={currentRoomType}
+        setSelectedOption={setCurrentRoomType}
+      />
+
+      <CategorySelect
+        label="Investment consideration"
+        options={Investments}
+        selectedOption={currentInvestment}
+        setSelectedOption={setCurrentInvestment}
+      />
+
       <FieldWrapper id={"message"} type={"textarea"} label={"your message"} />
       <div>
         <FilterButton text={"submit"} type="submit" />
